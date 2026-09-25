@@ -15,6 +15,32 @@
 *{box-sizing:border-box}html,body{margin:0;height:100%;font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#dfe6d3;color:var(--ink)}body{overflow:hidden}.app-shell{height:100dvh;max-width:560px;margin:auto;position:relative;background:#edf1df;overflow:hidden}.topbar{height:82px;padding:14px 18px 8px;display:flex;justify-content:space-between;align-items:center;background:rgba(248,249,235,.88);backdrop-filter:blur(14px);position:relative;z-index:5;border-bottom:1px solid var(--line)}.eyebrow{font-size:9px;letter-spacing:.16em;font-weight:800;color:var(--sage-dark)}h1{font:700 25px Georgia,serif;margin:2px 0 0}.icon-btn,.close-btn{border:0;background:rgba(67,85,62,.08);width:40px;height:40px;border-radius:50%;font-size:19px;color:var(--ink);cursor:pointer}.feed{height:calc(100dvh - 82px - 72px);overflow-y:auto;scroll-snap-type:y mandatory;scrollbar-width:none}.feed::-webkit-scrollbar{display:none}.card{min-height:100%;scroll-snap-align:start;position:relative;padding:26px 20px 28px;display:flex;align-items:flex-end;background:#60705c;isolation:isolate}.card:before{content:"";position:absolute;inset:0;z-index:-2;background:var(--bg);background-size:cover;background-position:center}.card:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(18,27,18,.06),rgba(18,27,18,.08) 28%,rgba(18,27,18,.82) 100%)}.card[data-theme="psychology"]{--bg:radial-gradient(circle at 22% 20%,#d6e6e8 0,#92b3b5 25%,#516d68 55%,#243a35 100%)}.card[data-theme="philosophy"]{--bg:linear-gradient(135deg,#c6aa7c,#e1cfaa 43%,#718269 70%,#3b4e3c)}.card[data-theme="mythology"]{--bg:linear-gradient(135deg,#d6a26b,#8c6c4a 43%,#536d52 68%,#263d30)}.card[data-theme="faith"]{--bg:linear-gradient(135deg,#f0d28b,#ad9d69 36%,#67825f 66%,#304a37)}.card[data-theme="fitness"]{--bg:linear-gradient(135deg,#b7a580,#71856b 44%,#3f5845 68%,#1e3229)}.card[data-theme="history"]{--bg:linear-gradient(135deg,#e0c08d,#a08460 42%,#66654c 68%,#333e32)}.card[data-theme="science"]{--bg:radial-gradient(circle at 75% 18%,#c7d8ee 0,#8193b3 25%,#4b5d78 55%,#202d40 100%)}.card[data-theme="literature"]{--bg:linear-gradient(135deg,#b9a58a,#7d765e 45%,#4d5d4d 70%,#27372e)}.content{width:100%;max-width:480px;margin:auto auto 0}.card-top{display:flex;justify-content:space-between;align-items:center}.pill{display:inline-flex;padding:7px 10px;border-radius:999px;background:rgba(20,30,22,.55);color:#fff;font-size:11px;font-weight:700;backdrop-filter:blur(8px)}.topic-dot{font-size:20px;filter:drop-shadow(0 2px 4px rgba(0,0,0,.25))}.card h2{font:700 clamp(29px,7vw,43px)/1.02 Georgia,serif;color:white;margin:12px 0 10px;letter-spacing:-.02em}.card .dek{font-size:15px;line-height:1.45;color:#f8f7ed;max-width:440px;margin:0 0 15px}.paper{background:rgba(255,250,240,.94);border:1px solid rgba(255,255,255,.5);border-radius:22px;padding:16px 17px;color:var(--ink);box-shadow:var(--shadow);margin:13px 0}.paper p{margin:0 0 9px;line-height:1.45;font-size:14px}.paper p:last-child{margin-bottom:0}.quote{font:italic 19px/1.35 Georgia,serif}.byline{font-size:12px!important;color:var(--muted);font-weight:700}.actions,.sub-actions{display:flex;gap:8px;align-items:center;margin-top:10px}.actions button,.sub-actions button,.cta{border:1px solid rgba(255,255,255,.25);background:rgba(30,42,30,.56);color:#fff;border-radius:999px;padding:10px 12px;font-weight:700;cursor:pointer;backdrop-filter:blur(8px);font-size:12px}.actions button.saved{background:#f4efd9;color:var(--ink)}.actions .grow,.sub-actions .grow{flex:1}.sub-actions{margin-top:7px}.sub-actions button{background:transparent;border-color:rgba(255,255,255,.15);font-size:11px}.quiz-options{display:grid;gap:8px}.quiz-options button{padding:11px 12px;border-radius:12px;border:1px solid var(--line);background:#f7f2e5;text-align:left;color:var(--ink);cursor:pointer}.quiz-options button:disabled{opacity:1}.quiz-options button.correct{outline:2px solid #728d61;background:#edf5e7}.quiz-options button.wrong{outline:2px solid #a65c4d;background:#f8e9e4}.quiz-result{font-size:12px!important;font-weight:700;margin-top:10px!important}.quiz-result.good{color:#4e7444}.quiz-result.bad{color:#9a5144}.bottom-nav{height:72px;position:absolute;bottom:0;left:0;right:0;background:rgba(248,249,235,.94);backdrop-filter:blur(16px);display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);z-index:10}.nav-btn{border:0;background:none;color:#71806e;font-weight:700;font-size:19px;cursor:pointer}.nav-btn span{display:block;font-size:10px;margin-top:2px}.nav-btn.active{color:var(--sage-dark)}.sheet{position:fixed;inset:0;z-index:50}.sheet.hidden{display:none}.sheet-backdrop{position:absolute;inset:0;background:rgba(22,29,22,.42);backdrop-filter:blur(4px)}.sheet-card{position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:min(560px,100%);max-height:90dvh;overflow:auto;background:var(--cream);border-radius:28px 28px 0 0;padding:28px 22px 36px;box-shadow:0 -20px 60px rgba(0,0,0,.2)}.close-btn{position:absolute;right:18px;top:16px}.sheet-card h2{font:700 30px Georgia,serif;margin:0 40px 10px 0}.sheet-card h3{font:700 16px Georgia,serif;margin:22px 0 10px}.sheet-card p{line-height:1.5;color:var(--muted)}.sheet-kicker{font-size:10px;letter-spacing:.13em;font-weight:900;color:var(--sage-dark);margin-bottom:7px}.topic-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:14px 0}.topic{border:1px solid var(--line);border-radius:18px;padding:14px;background:#f3eedf;text-align:left;cursor:pointer;color:var(--ink)}.topic.selected{background:#dfe9d4;border-color:#738965;box-shadow:inset 0 0 0 1px #738965}.topic strong{display:block;margin-top:6px}.topic small{display:block;color:var(--muted);line-height:1.3;margin-top:4px}.segmented{display:flex;gap:7px}.segmented button{flex:1;border:1px solid var(--line);background:#f3eedf;padding:11px;border-radius:13px;font-weight:800;color:var(--ink)}.segmented button.selected{background:var(--sage-dark);color:#fff}.range-label{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:11px}.range-label input{flex:1;accent-color:var(--sage-dark)}.cta{display:block;width:100%;background:var(--sage-dark);padding:13px;margin-top:14px;font-size:14px}.danger-btn{border:0;background:transparent;color:#9a5144;font-weight:800;padding:16px 0;cursor:pointer}.request-box{background:#f3eedf;border:1px solid var(--line);border-radius:20px;padding:16px;margin-top:18px}.request-box h3{margin-top:0}.request{display:flex;gap:8px;margin-top:12px}.request input{flex:1;border:1px solid var(--line);border-radius:14px;padding:13px;background:white;font:inherit;min-width:0}.request button{border:0;border-radius:14px;padding:0 15px;background:var(--sage-dark);color:white;font-weight:800}.trail{display:flex;gap:7px;flex-wrap:wrap;align-items:center;margin:18px 0}.trail span{background:#f1ead8;border:1px solid var(--line);padding:8px 10px;border-radius:999px;font-size:12px;font-weight:700}.trail b{color:var(--muted)}.mini-list{display:grid;gap:7px}.mini-list button{display:flex;align-items:center;gap:10px;border:1px solid var(--line);background:#f3eedf;border-radius:15px;padding:10px;text-align:left}.mini-list button span{font-size:20px}.mini-list button div{flex:1}.mini-list strong,.mini-list small{display:block}.mini-list small{color:var(--muted);margin-top:2px}.mini-list b{font-size:20px;color:var(--muted)}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.stat{background:#f0ebdc;border-radius:18px;padding:16px;text-align:center}.stat b{display:block;font:700 25px Georgia,serif}.stat span{font-size:11px;color:var(--muted)}.journey-paper{margin-top:14px}.big-number{font:700 34px Georgia,serif!important;color:var(--ink)!important;margin:0!important}.shelf-chip{display:inline-block;background:#f0ead9;border:1px solid var(--line);border-radius:999px;padding:7px 9px;margin:3px;font-size:11px;font-weight:700}.welcome{text-align:center;padding-top:8px}.melon{font-size:60px;margin-bottom:8px}.welcome h2{margin-left:0!important}.welcome-points{display:grid;gap:8px;text-align:left;margin:18px 0}.welcome-points span{background:#f2ecdc;border-radius:14px;padding:11px;font-size:13px}.install-prompt{position:fixed;left:50%;bottom:84px;transform:translateX(-50%);width:min(520px,calc(100% - 24px));z-index:30;background:rgba(255,250,240,.97);border:1px solid var(--line);box-shadow:var(--shadow);border-radius:18px;padding:12px 13px;display:flex;align-items:center;gap:9px}.install-prompt.hidden{display:none}.install-prompt div{flex:1}.install-prompt strong,.install-prompt span{display:block}.install-prompt strong{font-size:12px}.install-prompt span{font-size:11px;color:var(--muted);margin-top:2px}.install-prompt button{border:0;border-radius:12px;background:var(--sage-dark);color:white;padding:9px 13px;font-weight:800}.install-prompt .mini-close{background:transparent;color:var(--muted);padding:5px;font-size:18px}.toast{position:fixed;z-index:100;left:50%;bottom:100px;transform:translateX(-50%);background:#263329;color:white;padding:10px 14px;border-radius:999px;font-size:12px;font-weight:800;box-shadow:var(--shadow)}
 @media(min-width:700px){body{padding:18px}.app-shell{border-radius:32px;box-shadow:0 20px 80px rgba(31,45,31,.22);height:calc(100dvh - 36px)}}
 
+
+/* WATERMELONS FUN EDITION */
+.top-actions{display:flex;gap:7px}
+.quest-strip{height:50px;display:flex;align-items:center;justify-content:space-between;padding:7px 14px;background:rgba(255,250,240,.78);border-bottom:1px solid var(--line);backdrop-filter:blur(12px);position:relative;z-index:4}
+.quest-copy{display:flex;align-items:center;gap:9px;min-width:0}.quest-copy>span{font-size:20px}.quest-copy b,.quest-copy small{display:block}.quest-copy b{font-size:11px}.quest-copy small{font-size:10px;color:var(--muted);margin-top:1px}
+.xp-pill{border:1px solid rgba(67,85,62,.18);background:#eef1df;border-radius:999px;padding:7px 10px;font-size:10px;font-weight:900;color:var(--sage-dark)}
+.feed{height:calc(100dvh - 82px - 50px - 72px)}
+.card{transition:transform .2s ease}.card:hover{transform:scale(.995)}
+.card .content{animation:wmIn .35s ease both}
+@keyframes wmIn{from{opacity:.65;transform:translateY(10px)}to{opacity:1;transform:none}}
+.card-top{display:flex;align-items:center;justify-content:space-between;gap:10px}.topic-dot{font-size:25px;filter:drop-shadow(0 3px 6px rgba(0,0,0,.22))}
+.card .paper{backdrop-filter:blur(5px)}
+.actions button,.sub-actions button{transition:transform .12s ease,background .12s ease}.actions button:active,.sub-actions button:active{transform:scale(.95)}
+.actions .save.saved{background:#fff3b0!important;color:#5f531d!important}
+.quest-complete{animation:wmPop .55s ease}.xp-float{position:fixed;z-index:120;left:50%;top:42%;pointer-events:none;font-weight:1000;font-size:22px;color:#fff7c7;text-shadow:0 3px 12px rgba(0,0,0,.35);animation:xpFloat 900ms ease forwards}
+@keyframes xpFloat{0%{opacity:0;transform:translate(-50%,20px) scale(.7)}20%{opacity:1}100%{opacity:0;transform:translate(-50%,-70px) scale(1.15)}}
+@keyframes wmPop{0%,100%{transform:scale(1)}45%{transform:scale(1.08)}}
+.theme-card{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:14px}
+.theme-choice{border:0;border-radius:18px;min-height:110px;padding:13px;text-align:left;color:white;position:relative;overflow:hidden;font-weight:800;box-shadow:0 8px 20px rgba(31,45,31,.12)}
+.theme-choice span{font-size:28px;display:block;margin-bottom:8px}.theme-choice small{display:block;font-size:10px;opacity:.86;margin-top:3px}
+.theme-meadow{background:linear-gradient(145deg,#8aa47c,#355342)}.theme-ancient{background:linear-gradient(145deg,#c7a36a,#66533b)}.theme-pirate{background:linear-gradient(145deg,#244c59,#162832)}.theme-night{background:linear-gradient(145deg,#37305c,#141626)}.theme-sunrise{background:linear-gradient(145deg,#d38a5d,#6b4a49)}
+body.wm-ancient .app-shell{background:#eee2c8}body.wm-ancient .topbar,body.wm-ancient .quest-strip{background:rgba(244,235,213,.88)}
+body.wm-pirate .app-shell{background:#dce8e6}body.wm-pirate .topbar,body.wm-pirate .quest-strip{background:rgba(235,244,242,.9)}
+body.wm-night .app-shell{background:#1d2130;color:#f5f0df}body.wm-night .topbar,body.wm-night .quest-strip{background:rgba(25,29,43,.9);color:#f5f0df}body.wm-night h1,body.wm-night .icon-btn{color:#f5f0df}body.wm-night .quest-copy small{color:#b8bfcc}body.wm-night .xp-pill{background:#2b3044;color:#f5e7a7;border-color:#4b536b}
+body.wm-sunrise .app-shell{background:#f5e2d2}body.wm-sunrise .topbar,body.wm-sunrise .quest-strip{background:rgba(255,244,235,.88)}
+
 </style>
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -28,8 +54,12 @@
       <div class="eyebrow">LEARN, THEN WANDER</div>
       <h1>Watermelons</h1>
     </div>
-    <button id="settingsBtn" class="icon-btn" aria-label="Settings">⚙︎</button>
+    <div class="top-actions"><button id="themeBtn" class="icon-btn" aria-label="Change theme">🎭</button><button id="settingsBtn" class="icon-btn" aria-label="Settings">⚙︎</button></div>
   </header>
+  <div class="quest-strip">
+    <div class="quest-copy"><span id="questIcon">🧭</span><div><b id="questTitle">Daily Quest</b><small id="questText">Discover 3 new ideas</small></div></div>
+    <button id="xpPill" class="xp-pill">0 XP</button>
+  </div>
 
   <main id="feed" class="feed" aria-live="polite"></main>
 
@@ -265,6 +295,103 @@ function onboarding(){
 window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredInstall=e;document.getElementById('installPrompt').classList.remove('hidden')});
 document.getElementById('installBtn').onclick=async()=>{if(deferredInstall){deferredInstall.prompt();await deferredInstall.userChoice;deferredInstall=null;}document.getElementById('installPrompt').classList.add('hidden')};
 document.getElementById('dismissInstall').onclick=()=>document.getElementById('installPrompt').classList.add('hidden');
+
+
+/* FUN LAYER */
+const WM_THEMES = {
+  meadow:{name:'Meadow',icon:'🌿',desc:'Bright, calm, curious',cls:''},
+  ancient:{name:'Ancient World',icon:'🏛️',desc:'Marble, parchment, olive',cls:'wm-ancient'},
+  pirate:{name:'Open Seas',icon:'🏴‍☠️',desc:'Charts, storms, treasure',cls:'wm-pirate'},
+  night:{name:'Midnight Library',icon:'🌙',desc:'Dark, quiet, mysterious',cls:'wm-night'},
+  sunrise:{name:'Golden Hour',icon:'🌅',desc:'Warm, adventurous',cls:'wm-sunrise'}
+};
+const wmXPKey='watermelons-xp', wmThemeKey='watermelons-theme', wmQuestKey='watermelons-quest';
+let wmXP=Number(localStorage.getItem(wmXPKey)||0);
+let wmTheme=localStorage.getItem(wmThemeKey)||'meadow';
+let wmQuest=load(wmQuestKey,{day:new Date().toISOString().slice(0,10),seen:0,quiz:0,saved:0});
+
+function wmToday(){return new Date().toISOString().slice(0,10)}
+function wmRefreshQuest(){
+  const today=wmToday();
+  if(wmQuest.day!==today) wmQuest={day:today,seen:0,quiz:0,saved:0};
+  const done=Math.min(wmQuest.seen,3);
+  document.getElementById('questText').textContent=done>=3?'Quest complete! Pick a rabbit hole.':`Discover ${Math.max(0,3-done)} more new idea${3-done===1?'':'s'}`;
+  document.getElementById('questIcon').textContent=done>=3?'🏆':'🧭';
+  document.getElementById('questTitle').textContent=done>=3?'Daily Quest Complete':'Daily Quest';
+  document.getElementById('xpPill').textContent=wmXP+' XP';
+  save(wmQuestKey,wmQuest);
+}
+function wmAddXP(n,label){
+  wmXP+=n; localStorage.setItem(wmXPKey,String(wmXP)); wmRefreshQuest();
+  const f=document.createElement('div');f.className='xp-float';f.textContent=`+${n} XP ${label?'· '+label:''}`;document.body.appendChild(f);setTimeout(()=>f.remove(),950);
+}
+function wmApplyTheme(k){
+  Object.values(WM_THEMES).forEach(t=>t.cls&&document.body.classList.remove(t.cls));
+  const t=WM_THEMES[k]||WM_THEMES.meadow;
+  if(t.cls)document.body.classList.add(t.cls);
+  wmTheme=k;localStorage.setItem(wmThemeKey,k);
+}
+function wmThemeSheet(){
+  showSheet(`<div class="sheet-kicker">🎭 Change the atmosphere</div><h2 id="sheetTitle">Where are we wandering today?</h2><p>The subject can stay the same while the world around it changes.</p><div class="theme-card">${Object.entries(WM_THEMES).map(([k,t])=>`<button class="theme-choice theme-${k}" data-wm-theme="${k}"><span>${t.icon}</span><strong>${t.name}</strong><small>${t.desc}</small></button>`).join('')}</div><div class="paper" style="margin-top:12px"><b>Current mood:</b> ${WM_THEMES[wmTheme].name}</div>`);
+  document.querySelectorAll('[data-wm-theme]').forEach(b=>b.onclick=()=>{wmApplyTheme(b.dataset.wmTheme);closeSheet();toast(WM_THEMES[b.dataset.wmTheme].icon+' '+WM_THEMES[b.dataset.wmTheme].name+' activated');});
+}
+document.getElementById('themeBtn').onclick=wmThemeSheet;
+wmApplyTheme(wmTheme);
+wmRefreshQuest();
+
+/* Reward normal actions so the learning loop has a little game underneath it. */
+const wmOriginalToggleSave=toggleSave;
+toggleSave=function(id,el){
+  const before=state.saved.includes(id);
+  wmOriginalToggleSave(id,el);
+  if(!before){wmQuest.saved++;wmAddXP(5,'saved');}
+  save(wmQuestKey,wmQuest);wmRefreshQuest();
+};
+const wmOriginalAnswerQuiz=answerQuiz;
+answerQuiz=function(item,el,choice){
+  const before=state.attempted;
+  wmOriginalAnswerQuiz(item,el,choice);
+  if(state.attempted>before){
+    const ok=choice===item.answer;
+    wmQuest.quiz++;
+    wmAddXP(ok?15:3,ok?'nailed it':'good try');
+    save(wmQuestKey,wmQuest);wmRefreshQuest();
+  }
+};
+const wmOriginalMarkSeen=markSeen;
+markSeen=function(card){
+  const before=state.seen;
+  wmOriginalMarkSeen(card);
+  if(state.seen>before){
+    wmQuest.seen++;
+    wmAddXP(2,'discovered');
+    save(wmQuestKey,wmQuest);wmRefreshQuest();
+  }
+};
+
+/* Give the user a fun "choose your next adventure" prompt every so often. */
+function wmAdventure(){
+  const choices=[
+    ['🧠','Mind Bender','Give me a psychology idea that makes me question my own brain.','psychology'],
+    ['🏛️','Lost in Antiquity','Take me somewhere strange in the ancient world.','mythology'],
+    ['🏴‍☠️','Treasure Map','Give me a historical rabbit hole I probably have never heard of.','history'],
+    ['📚','One Great Idea','Give me one philosophical idea worth carrying around today.','philosophy'],
+    ['🔭','Cosmic Detour','Show me something ridiculous about the universe.','science'],
+    ['🎲','Dealer’s Choice','You choose. Surprise me.','surprise']
+  ];
+  const html=`<div class="sheet-kicker">🧭 Choose your adventure</div><h2 id="sheetTitle">Where should the feed take you?</h2><p>No homework. Just pick a door.</p><div class="theme-card">${choices.map((c,i)=>`<button class="theme-choice theme-${i%5===0?'meadow':i%5===1?'ancient':i%5===2?'pirate':i%5===3?'night':'sunrise'}" data-adventure="${i}"><span>${c[0]}</span><strong>${c[1]}</strong><small>${c[2]}</small></button>`).join('')}</div>`;
+  showSheet(html);
+  document.querySelectorAll('[data-adventure]').forEach(b=>b.onclick=()=>{
+    const c=choices[Number(b.dataset.adventure)];
+    closeSheet();
+    if(c[3]==='surprise'){state.prefs.novelty=100;save('watermelons-prefs',state.prefs);renderFeed(nextBatch(10));toast('🎲 Fate has dealt your next cards');}
+    else {state.prefs.topics=[c[3],...state.prefs.topics.filter(x=>x!==c[3])];save('watermelons-prefs',state.prefs);renderFeed(nextBatch(10));toast(c[0]+' '+c[1]);}
+  });
+}
+
+/* Put a small adventure button into the quest strip. */
+document.getElementById('questText').parentElement.parentElement.insertAdjacentHTML('afterend','<button id="adventureBtn" class="icon-btn" aria-label="Choose your adventure">🧭</button>');
+document.getElementById('adventureBtn').onclick=wmAdventure;
 
 if('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(()=>{});
 if(!state.onboarding)onboarding();else renderFeed(nextBatch(8));
