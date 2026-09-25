@@ -2826,7 +2826,78 @@ function renderAIChat(){
     `)
     .join("");
 
-  box.scrollTop=box.scrollHeight;
+    document
+    .querySelectorAll("[data-ai-prompt]")
+    .forEach(btn=>{
+
+      btn.onclick=()=>{
+
+        const prompt=btn.dataset.aiPrompt;
+
+        if(input){
+          input.value=prompt;
+          input.focus();
+        }
+
+        askScotts(prompt);
+
+      };
+
+    });
+
+}
+
+async function askScotts(question){
+
+  if(!question || aiBusy){
+    return;
+  }
+
+  const box=document.getElementById("aiChat");
+  const input=document.getElementById("aiPageInput");
+  const send=document.getElementById("aiPageSend");
+
+  aiBusy=true;
+
+  if(send){
+    send.disabled=true;
+    send.textContent="…";
+  }
+
+  aiChat.push({
+    role:"user",
+    text:question
+  });
+
+  renderAIChat();
+
+  if(input){
+    input.value="";
+  }
+
+  if(box){
+
+    box.insertAdjacentHTML(
+      "beforeend",
+      `
+        <div
+          class="ai-thinking"
+          id="aiThinking"
+        >
+          <i></i>
+          <i></i>
+          <i></i>
+          <span>ScottsTot is thinking…</span>
+        </div>
+      `
+    );
+
+    const page=document.querySelector(".ai-page");
+
+    if(page){
+      page.scrollTop=page.scrollHeight;
+
+  }
 
 }
 
@@ -3031,8 +3102,11 @@ async function askScotts(question){
       `
     );
 
-    box.scrollTop=box.scrollHeight;
+    const page=document.querySelector(".ai-page");
 
+    if(page){
+      page.scrollTop=page.scrollHeight;
+    }
   }
 
   try{
