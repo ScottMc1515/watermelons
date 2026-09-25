@@ -55,7 +55,7 @@ linear-gradient(135deg,#e9d39f,#cda86c 45%,#e3c98f)}
 .map-title{position:absolute;top:18px;left:50%;transform:translateX(-50%);font:700 24px Georgia,serif;color:#5a452a;white-space:nowrap;letter-spacing:.04em}
 .compass{position:absolute;right:18px;top:18px;font-size:40px;filter:sepia(1) saturate(.7);opacity:.72}
 .route{position:absolute;border-top:2px dashed rgba(83,61,34,.42);width:34%;transform-origin:left center;pointer-events:none}
-.route.r1{left:27%;top:45%;transform:rotate(-13deg)}.route.r2{left:47%;top:52%;transform:rotate(25deg)}.route.r3{left:52%;top:70%;transform:rotate(-35deg)}
+.route.r1{left:16%;top:38%;width:48%;transform:rotate(-8deg)}.route.r2{left:45%;top:53%;width:40%;transform:rotate(17deg)}.route.r3{left:25%;top:70%;width:52%;transform:rotate(9deg)}
 .island{position:absolute;border:2px solid rgba(84,60,32,.42);box-shadow:inset 0 0 0 2px rgba(255,245,205,.25);background:rgba(105,125,77,.28);border-radius:53% 47% 60% 40%/44% 57% 43% 56%;transform:rotate(-7deg)}
 .island.i1{width:210px;height:115px;left:6%;top:25%;}.island.i2{width:165px;height:105px;right:5%;top:38%;transform:rotate(12deg)}.island.i3{width:190px;height:120px;left:30%;bottom:7%;transform:rotate(3deg)}.island.i4{width:120px;height:78px;right:18%;top:18%;transform:rotate(-18deg)}
 .world-pin{position:absolute;z-index:2;border:1px solid rgba(65,47,26,.25);border-radius:16px;padding:9px 11px;text-align:left;min-width:126px;background:rgba(255,244,211,.92);color:#46361f;box-shadow:0 7px 18px rgba(64,45,25,.15);cursor:pointer}
@@ -91,7 +91,7 @@ body{background:#071116}
 .map-view{position:relative;background:radial-gradient(circle at 50% 20%,#122d35 0,#071116 52%,#04090c 100%);color:#dffaf6;padding:16px 12px 28px}
 .map-view:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.14;background:repeating-linear-gradient(0deg,transparent 0,transparent 3px,rgba(121,232,255,.08) 4px);mix-blend-mode:screen}
 .map-head{align-items:center;padding:4px 4px 12px}.map-head h2{font-family:ui-sans-serif,system-ui,sans-serif;font-size:27px;letter-spacing:-.04em;color:#effffd}.map-head p{color:#789b9c}.map-head .sheet-kicker{color:#6ee3df;letter-spacing:.18em}
-.map-paper{min-height:610px;border-radius:26px;border:1px solid rgba(121,232,255,.24);background:radial-gradient(circle at 50% 50%,rgba(41,106,116,.2),transparent 38%),linear-gradient(145deg,#0d222a,#08151b 52%,#0b1b20);box-shadow:inset 0 0 70px rgba(121,232,255,.06),0 20px 70px rgba(0,0,0,.42);overflow:hidden}
+.map-paper{min-height:720px;border-radius:26px;border:1px solid rgba(121,232,255,.24);background:radial-gradient(circle at 50% 50%,rgba(41,106,116,.2),transparent 38%),linear-gradient(145deg,#0d222a,#08151b 52%,#0b1b20);box-shadow:inset 0 0 70px rgba(121,232,255,.06),0 20px 70px rgba(0,0,0,.42);overflow:hidden}
 .map-paper:before{opacity:.16;background-image:linear-gradient(rgba(121,232,255,.13) 1px,transparent 1px),linear-gradient(90deg,rgba(121,232,255,.13) 1px,transparent 1px);background-size:34px 34px}
 .map-paper:after{content:"";position:absolute;left:0;right:0;top:0;height:35%;background:linear-gradient(transparent,rgba(121,232,255,.07),transparent);animation:wmScan 7s linear infinite;pointer-events:none}
 .map-title{top:17px;color:#d9fffa;font-family:ui-sans-serif,system-ui,sans-serif;font-size:12px;letter-spacing:.28em;text-shadow:0 0 18px rgba(121,232,255,.7)}
@@ -101,11 +101,22 @@ body{background:#071116}
 .island{border:1px solid rgba(121,232,255,.22);background:radial-gradient(circle at 35% 35%,rgba(121,232,255,.18),rgba(41,89,91,.1) 45%,transparent 70%);box-shadow:inset 0 0 35px rgba(121,232,255,.08),0 0 20px rgba(121,232,255,.04)}
 .world-pin{border:1px solid rgba(121,232,255,.2);border-radius:18px;background:rgba(8,24,30,.76);color:#e8fffb;box-shadow:0 8px 25px rgba(0,0,0,.28),inset 0 0 18px rgba(121,232,255,.035);backdrop-filter:blur(10px);transition:.2s ease}
 .world-pin:before{content:"";position:absolute;inset:5px;border:1px solid rgba(121,232,255,.06);border-radius:13px;pointer-events:none}.world-pin b{font-family:ui-sans-serif,system-ui,sans-serif;color:#eaffff}.world-pin small{color:#7fa7a7}.world-pin span{filter:none;text-shadow:0 0 12px rgba(121,232,255,.7)}.world-pin:hover{transform:translateY(-3px) scale(1.025);border-color:rgba(121,232,255,.55);box-shadow:0 0 25px rgba(121,232,255,.16)}
-.pin-psych{animation:wmPulse 3s infinite}.pin-phil{animation:wmPulse 3.8s .5s infinite}.pin-myth{animation:wmPulse 3.2s 1s infinite}.pin-faith{animation:wmPulse 4s 1.4s infinite}.pin-fit{animation:wmPulse 3.5s 1.8s infinite}.pin-history{animation:wmPulse 4.2s 2s infinite}.pin-science{animation:wmPulse 3.4s 2.3s infinite}.pin-lit{animation:wmPulse 3.9s 2.6s infinite}
+.pin-psych{left:5%;top:25%;animation:wmPulse 3s infinite}.pin-phil{left:36%;top:38%;animation:wmPulse 3.8s .5s infinite}.pin-myth{right:4%;top:20%;animation:wmPulse 3.2s 1s infinite}.pin-faith{right:5%;top:48%;animation:wmPulse 4s 1.4s infinite}.pin-fit{left:4%;top:61%;animation:wmPulse 3.5s 1.8s infinite}.pin-history{left:35%;top:67%;animation:wmPulse 4.2s 2s infinite}.pin-science{right:4%;top:77%;animation:wmPulse 3.4s 2.3s infinite}.pin-lit{left:37%;top:10%;animation:wmPulse 3.9s 2.6s infinite}
 .map-legend{gap:6px}.map-chip{background:rgba(121,232,255,.05);border-color:rgba(121,232,255,.14);color:#9ed6d3}
 
 /* HUD readouts */
 .hud-readout{position:absolute;left:14px;bottom:14px;z-index:3;padding:8px 10px;border:1px solid rgba(121,232,255,.13);border-radius:12px;background:rgba(3,12,16,.62);backdrop-filter:blur(8px);font:700 9px/1.45 ui-monospace,monospace;color:#69c9c6;letter-spacing:.06em}.hud-readout b{color:#e4fffb}.hud-corner{position:absolute;width:30px;height:30px;border-color:rgba(121,232,255,.42);border-style:solid;z-index:3;pointer-events:none}.hud-corner.a{left:10px;top:10px;border-width:1px 0 0 1px}.hud-corner.b{right:10px;bottom:10px;border-width:0 1px 1px 0}
+
+
+@media(max-width:430px){
+  .map-paper{min-height:760px}
+  .world-pin{min-width:118px;padding:9px 10px}
+  .world-pin b{font-size:14px}
+  .world-pin small{font-size:8.5px}
+  .pin-psych{left:3%;top:24%}.pin-phil{left:35%;top:36%}.pin-myth{right:3%;top:18%}
+  .pin-faith{right:3%;top:48%}.pin-fit{left:3%;top:60%}.pin-history{left:34%;top:67%}
+  .pin-science{right:3%;top:78%}.pin-lit{left:35%;top:8%}
+}
 
 </style>
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -515,14 +526,28 @@ function wmMusicBar(){
  melodyNotes.forEach((n,i)=>{const t=now+(i+.4)*beat*.72;wmTone(m.root*2*Math.pow(2,n/12),beat*.48,t,'sine',.008,.06)});
  wmStep++; wmLoop=setTimeout(wmMusicBar,beat*4000);
 }
-function wmStartSound(){
- if(wmPlaying)return; try{wmAudio=new(window.AudioContext||window.webkitAudioContext)();wmMaster=wmAudio.createGain();wmMaster.gain.value=.18;wmMaster.connect(wmAudio.destination);wmPlaying=true;wmStep=0;
- document.getElementById('soundBtn').textContent='🔊';document.getElementById('soundBtn').classList.add('sound-on','sound-pulse');wmMusicBar();
- }catch{toast('Soundscape is not available in this browser yet.');}
+async function wmStartSound(){
+ if(wmPlaying)return;
+ try{
+   wmAudio=new(window.AudioContext||window.webkitAudioContext)();
+   if(wmAudio.state==='suspended') await wmAudio.resume();
+   wmMaster=wmAudio.createGain();
+   wmMaster.gain.setValueAtTime(.0001,wmAudio.currentTime);
+   wmMaster.gain.exponentialRampToValueAtTime(.18,wmAudio.currentTime+.35);
+   wmMaster.connect(wmAudio.destination);
+   wmPlaying=true;wmStep=0;
+   document.getElementById('soundBtn').textContent='🔊';
+   document.getElementById('soundBtn').classList.add('sound-on','sound-pulse');
+   wmMusicBar();
+ }catch(e){
+   wmAudio=null;wmMaster=null;wmPlaying=false;
+   toast('Your browser blocked the soundscape. Tap the sound button once more to wake it up.');
+ }
 }
 function wmStopSound(){if(!wmPlaying)return;wmPlaying=false;clearTimeout(wmLoop);wmLoop=null;try{wmMaster?.gain.exponentialRampToValueAtTime(.0001,wmAudio.currentTime+.25);setTimeout(()=>wmAudio?.close(),350)}catch{}wmAudio=null;wmMaster=null;document.getElementById('soundBtn').textContent='🔇';document.getElementById('soundBtn').classList.remove('sound-on','sound-pulse')}
-document.getElementById('soundBtn').onclick=()=>wmPlaying?wmStopSound():wmStartSound();
+document.getElementById('soundBtn').onclick=async()=>wmPlaying?wmStopSound():await wmStartSound();
 const wmOldApplyTheme=wmApplyTheme;wmApplyTheme=function(k){wmOldApplyTheme(k);if(wmPlaying){wmStopSound();setTimeout(wmStartSound,120)}};
+document.addEventListener('visibilitychange',async()=>{if(!document.hidden&&wmPlaying&&wmAudio?.state==='suspended'){try{await wmAudio.resume();}catch{}}});
 
 /* Make the existing nav actually switch to the new map view. */
 document.querySelectorAll('.nav-btn').forEach(btn=>{
