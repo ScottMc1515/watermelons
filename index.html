@@ -12,7 +12,7 @@
 <title>Watermelons</title>
 <style>
 :root{--ink:#263329;--muted:#697568;--paper:#f8f2e2;--cream:#fffaf0;--sage:#738965;--sage-dark:#43553e;--line:rgba(54,70,53,.15);--shadow:0 18px 45px rgba(31,45,31,.22)}
-*{box-sizing:border-box}html,body{margin:0;height:100%;font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#dfe6d3;color:var(--ink)}body{overflow:hidden}.app-shell{height:100dvh;max-width:560px;margin:auto;position:relative;background:#edf1df;overflow:hidden}.topbar{height:82px;padding:14px 18px 8px;display:flex;justify-content:space-between;align-items:center;background:rgba(248,249,235,.88);backdrop-filter:blur(14px);position:relative;z-index:5;border-bottom:1px solid var(--line)}.eyebrow{font-size:9px;letter-spacing:.16em;font-weight:800;color:var(--sage-dark)}h1{font:700 25px Georgia,serif;margin:2px 0 0}.icon-btn,.close-btn{border:0;background:rgba(67,85,62,.08);width:40px;height:40px;border-radius:50%;font-size:19px;color:var(--ink);cursor:pointer}.feed{height:calc(100dvh - 82px - 72px);overflow-y:auto;scroll-snap-type:y mandatory;scrollbar-width:none}.feed::-webkit-scrollbar{display:none}.card{min-height:100%;scroll-snap-align:start;position:relative;padding:26px 20px 28px;display:flex;align-items:flex-end;background:#60705c;isolation:isolate}.card:before{content:"";position:absolute;inset:0;z-index:-2;background:var(--bg);background-size:cover;background-position:center}.card:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(18,27,18,.06),rgba(18,27,18,.08) 28%,rgba(18,27,18,.82) 100%)}.card[data-theme="psychology"]{--bg:radial-gradient(circle at 22% 20%,#d6e6e8 0,#92b3b5 25%,#516d68 55%,#243a35 100%)}.card[data-theme="philosophy"]{--bg:linear-gradient(135deg,#c6aa7c,#e1cfaa 43%,#718269 70%,#3b4e3c)}.card[data-theme="mythology"]{--bg:linear-gradient(135deg,#d6a26b,#8c6c4a 43%,#536d52 68%,#263d30)}.card[data-theme="faith"]{--bg:linear-gradient(135deg,#f0d28b,#ad9d69 36%,#67825f 66%,#304a37)}.card[data-theme="fitness"]{--bg:linear-gradient(135deg,#b7a580,#71856b 44%,#3f5845 68%,#1e3229)}.card[data-theme="history"]{--bg:linear-gradient(135deg,#e0c08d,#a08460 42%,#66654c 68%,#333e32)}.card[data-theme="science"]{--bg:radial-gradient(circle at 75% 18%,#c7d8ee 0,#8193b3 25%,#4b5d78 55%,#202d40 100%)}.card[data-theme="literature"]{--bg:linear-gradient(135deg,#b9a58a,#7d765e 45%,#4d5d4d 70%,#27372e)}.content{width:100%;max-width:480px;margin:auto auto 0}.card-top{display:flex;justify-content:space-between;align-items:center}.pill{display:inline-flex;padding:7px 10px;border-radius:999px;background:rgba(20,30,22,.55);color:#fff;font-size:11px;font-weight:700;backdrop-filter:blur(8px)}.topic-dot{font-size:20px;filter:drop-shadow(0 2px 4px rgba(0,0,0,.25))}.card h2{font:700 clamp(29px,7vw,43px)/1.02 Georgia,serif;color:white;margin:12px 0 10px;letter-spacing:-.02em}.card .dek{font-size:15px;line-height:1.45;color:#f8f7ed;max-width:440px;margin:0 0 15px}.paper{background:rgba(255,250,240,.94);border:1px solid rgba(255,255,255,.5);border-radius:22px;padding:16px 17px;color:var(--ink);box-shadow:var(--shadow);margin:13px 0}.paper p{margin:0 0 9px;line-height:1.45;font-size:14px}.paper p:last-child{margin-bottom:0}.quote{font:italic 19px/1.35 Georgia,serif}.byline{font-size:12px!important;color:var(--muted);font-weight:700}.actions,.sub-actions{display:flex;gap:8px;align-items:center;margin-top:10px}.actions button,.sub-actions button,.cta{border:1px solid rgba(255,255,255,.25);background:rgba(30,42,30,.56);color:#fff;border-radius:999px;padding:10px 12px;font-weight:700;cursor:pointer;backdrop-filter:blur(8px);font-size:12px}.actions button.saved{background:#f4efd9;color:var(--ink)}.actions .grow,.sub-actions .grow{flex:1}.sub-actions{margin-top:7px}.sub-actions button{background:transparent;border-color:rgba(255,255,255,.15);font-size:11px}.quiz-options{display:grid;gap:8px}.quiz-options button{padding:11px 12px;border-radius:12px;border:1px solid var(--line);background:#f7f2e5;text-align:left;color:var(--ink);cursor:pointer}.quiz-options button:disabled{opacity:1}.quiz-options button.correct{outline:2px solid #728d61;background:#edf5e7}.quiz-options button.wrong{outline:2px solid #a65c4d;background:#f8e9e4}.quiz-result{font-size:12px!important;font-weight:700;margin-top:10px!important}.quiz-result.good{color:#4e7444}.quiz-result.bad{color:#9a5144}.bottom-nav{height:72px;position:absolute;bottom:0;left:0;right:0;background:rgba(248,249,235,.94);backdrop-filter:blur(16px);display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);z-index:10}.nav-btn{border:0;background:none;color:#71806e;font-weight:700;font-size:19px;cursor:pointer}.nav-btn span{display:block;font-size:10px;margin-top:2px}.nav-btn.active{color:var(--sage-dark)}.sheet{position:fixed;inset:0;z-index:50}.sheet.hidden{display:none}.sheet-backdrop{position:absolute;inset:0;background:rgba(22,29,22,.42);backdrop-filter:blur(4px)}.sheet-card{position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:min(560px,100%);max-height:90dvh;overflow:auto;background:var(--cream);border-radius:28px 28px 0 0;padding:28px 22px 36px;box-shadow:0 -20px 60px rgba(0,0,0,.2)}.close-btn{position:absolute;right:18px;top:16px}.sheet-card h2{font:700 30px Georgia,serif;margin:0 40px 10px 0}.sheet-card h3{font:700 16px Georgia,serif;margin:22px 0 10px}.sheet-card p{line-height:1.5;color:var(--muted)}.sheet-kicker{font-size:10px;letter-spacing:.13em;font-weight:900;color:var(--sage-dark);margin-bottom:7px}.topic-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:14px 0}.topic{border:1px solid var(--line);border-radius:18px;padding:14px;background:#f3eedf;text-align:left;cursor:pointer;color:var(--ink)}.topic.selected{background:#dfe9d4;border-color:#738965;box-shadow:inset 0 0 0 1px #738965}.topic strong{display:block;margin-top:6px}.topic small{display:block;color:var(--muted);line-height:1.3;margin-top:4px}.segmented{display:flex;gap:7px}.segmented button{flex:1;border:1px solid var(--line);background:#f3eedf;padding:11px;border-radius:13px;font-weight:800;color:var(--ink)}.segmented button.selected{background:var(--sage-dark);color:#fff}.range-label{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:11px}.range-label input{flex:1;accent-color:var(--sage-dark)}.cta{display:block;width:100%;background:var(--sage-dark);padding:13px;margin-top:14px;font-size:14px}.danger-btn{border:0;background:transparent;color:#9a5144;font-weight:800;padding:16px 0;cursor:pointer}.request-box{background:#f3eedf;border:1px solid var(--line);border-radius:20px;padding:16px;margin-top:18px}.request-box h3{margin-top:0}.request{display:flex;gap:8px;margin-top:12px}.request input{flex:1;border:1px solid var(--line);border-radius:14px;padding:13px;background:white;font:inherit;min-width:0}.request button{border:0;border-radius:14px;padding:0 15px;background:var(--sage-dark);color:white;font-weight:800}.trail{display:flex;gap:7px;flex-wrap:wrap;align-items:center;margin:18px 0}.trail span{background:#f1ead8;border:1px solid var(--line);padding:8px 10px;border-radius:999px;font-size:12px;font-weight:700}.trail b{color:var(--muted)}.mini-list{display:grid;gap:7px}.mini-list button{display:flex;align-items:center;gap:10px;border:1px solid var(--line);background:#f3eedf;border-radius:15px;padding:10px;text-align:left}.mini-list button span{font-size:20px}.mini-list button div{flex:1}.mini-list strong,.mini-list small{display:block}.mini-list small{color:var(--muted);margin-top:2px}.mini-list b{font-size:20px;color:var(--muted)}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.stat{background:#f0ebdc;border-radius:18px;padding:16px;text-align:center}.stat b{display:block;font:700 25px Georgia,serif}.stat span{font-size:11px;color:var(--muted)}.journey-paper{margin-top:14px}.big-number{font:700 34px Georgia,serif!important;color:var(--ink)!important;margin:0!important}.shelf-chip{display:inline-block;background:#f0ead9;border:1px solid var(--line);border-radius:999px;padding:7px 9px;margin:3px;font-size:11px;font-weight:700}.welcome{text-align:center;padding-top:8px}.melon{font-size:60px;margin-bottom:8px}.welcome h2{margin-left:0!important}.welcome-points{display:grid;gap:8px;text-align:left;margin:18px 0}.welcome-points span{background:#f2ecdc;border-radius:14px;padding:11px;font-size:13px}.install-prompt{position:fixed;left:50%;bottom:84px;transform:translateX(-50%);width:min(520px,calc(100% - 24px));z-index:30;background:rgba(255,250,240,.97);border:1px solid var(--line);box-shadow:var(--shadow);border-radius:18px;padding:12px 13px;display:flex;align-items:center;gap:9px}.install-prompt.hidden{display:none}.install-prompt div{flex:1}.install-prompt strong,.install-prompt span{display:block}.install-prompt strong{font-size:12px}.install-prompt span{font-size:11px;color:var(--muted);margin-top:2px}.install-prompt button{border:0;border-radius:12px;background:var(--sage-dark);color:white;padding:9px 13px;font-weight:800}.install-prompt .mini-close{background:transparent;color:var(--muted);padding:5px;font-size:18px}.toast{position:fixed;z-index:100;left:50%;bottom:100px;transform:translateX(-50%);background:#263329;color:white;padding:10px 14px;border-radius:999px;font-size:12px;font-weight:800;box-shadow:var(--shadow)}
+*{box-sizing:border-box}html,body{margin:0;height:100%;font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#dfe6d3;color:var(--ink)}body{overflow:hidden}.app-shell{height:100dvh;max-width:560px;margin:auto;position:relative;background:#edf1df;overflow:hidden}.topbar{height:82px;padding:14px 18px 8px;display:flex;justify-content:space-between;align-items:center;background:rgba(248,249,235,.88);backdrop-filter:blur(14px);position:relative;z-index:5;border-bottom:1px solid var(--line)}.eyebrow{font-size:9px;letter-spacing:.16em;font-weight:800;color:var(--sage-dark)}h1{font:700 25px Georgia,serif;margin:2px 0 0}.icon-btn,.close-btn{border:0;background:rgba(67,85,62,.08);width:40px;height:40px;border-radius:50%;font-size:19px;color:var(--ink);cursor:pointer}.feed{height:calc(100dvh - 82px - 72px);overflow-y:auto;scroll-snap-type:y mandatory;scrollbar-width:none}.feed::-webkit-scrollbar{display:none}.card{min-height:100%;scroll-snap-align:start;position:relative;padding:26px 20px 28px;display:flex;align-items:flex-end;background:#60705c;isolation:isolate}.card:before{content:"";position:absolute;inset:0;z-index:-2;background:var(--bg);background-size:cover;background-position:center}.card:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(18,27,18,.06),rgba(18,27,18,.08) 28%,rgba(18,27,18,.82) 100%)}.card[data-theme="psychology"]{--bg:radial-gradient(circle at 22% 20%,#d6e6e8 0,#92b3b5 25%,#516d68 55%,#243a35 100%)}.card[data-theme="philosophy"]{--bg:linear-gradient(135deg,#c6aa7c,#e1cfaa 43%,#718269 70%,#3b4e3c)}.card[data-theme="mythology"]{--bg:linear-gradient(135deg,#d6a26b,#8c6c4a 43%,#536d52 68%,#263d30)}.card[data-theme="faith"]{--bg:linear-gradient(135deg,#f0d28b,#ad9d69 36%,#67825f 66%,#304a37)}.card[data-theme="fitness"]{--bg:linear-gradient(135deg,#b7a580,#71856b 44%,#3f5845 68%,#1e3229)}.card[data-theme="history"]{--bg:linear-gradient(135deg,#e0c08d,#a08460 42%,#66654c 68%,#333e32)}.card[data-theme="science"]{--bg:radial-gradient(circle at 75% 18%,#c7d8ee 0,#8193b3 25%,#4b5d78 55%,#202d40 100%)}.card[data-theme="literature"]{--bg:linear-gradient(135deg,#b9a58a,#7d765e 45%,#4d5d4d 70%,#27372e)}.content{width:100%;max-width:480px;margin:auto auto 0}.card-top{display:flex;justify-content:space-between;align-items:center}.pill{display:inline-flex;padding:7px 10px;border-radius:999px;background:rgba(20,30,22,.55);color:#fff;font-size:11px;font-weight:700;backdrop-filter:blur(8px)}.topic-dot{font-size:20px;filter:drop-shadow(0 2px 4px rgba(0,0,0,.25))}.card h2{font:700 clamp(29px,7vw,43px)/1.02 Georgia,serif;color:white;margin:12px 0 10px;letter-spacing:-.02em}.card .dek{font-size:15px;line-height:1.45;color:#f8f7ed;max-width:440px;margin:0 0 15px}.paper{background:rgba(255,250,240,.94);border:1px solid rgba(255,255,255,.5);border-radius:22px;padding:16px 17px;color:var(--ink);box-shadow:var(--shadow);margin:13px 0}.paper p{margin:0 0 9px;line-height:1.45;font-size:14px}.paper p:last-child{margin-bottom:0}.quote{font:italic 19px/1.35 Georgia,serif}.byline{font-size:12px!important;color:var(--muted);font-weight:700}.actions,.sub-actions{display:flex;gap:8px;align-items:center;margin-top:10px}.actions button,.sub-actions button,.cta{border:1px solid rgba(255,255,255,.25);background:rgba(30,42,30,.56);color:#fff;border-radius:999px;padding:10px 12px;font-weight:700;cursor:pointer;backdrop-filter:blur(8px);font-size:12px}.actions button.saved{background:#f4efd9;color:var(--ink)}.actions .grow,.sub-actions .grow{flex:1}.sub-actions{margin-top:7px}.sub-actions button{background:transparent;border-color:rgba(255,255,255,.15);font-size:11px}.quiz-options{display:grid;gap:8px}.quiz-options button{padding:11px 12px;border-radius:12px;border:1px solid var(--line);background:#f7f2e5;text-align:left;color:var(--ink);cursor:pointer}.quiz-options button:disabled{opacity:1}.quiz-options button.correct{outline:2px solid #728d61;background:#edf5e7}.quiz-options button.wrong{outline:2px solid #a65c4d;background:#f8e9e4}.quiz-result{font-size:12px!important;font-weight:700;margin-top:10px!important}.quiz-result.good{color:#4e7444}.quiz-result.bad{color:#9a5144}.sheet{position:fixed;inset:0;z-index:50}.sheet.hidden{display:none}.sheet-backdrop{position:absolute;inset:0;background:rgba(22,29,22,.42);backdrop-filter:blur(4px)}.sheet-card{position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:min(560px,100%);max-height:90dvh;overflow:auto;background:var(--cream);border-radius:28px 28px 0 0;padding:28px 22px 36px;box-shadow:0 -20px 60px rgba(0,0,0,.2)}.close-btn{position:absolute;right:18px;top:16px}.sheet-card h2{font:700 30px Georgia,serif;margin:0 40px 10px 0}.sheet-card h3{font:700 16px Georgia,serif;margin:22px 0 10px}.sheet-card p{line-height:1.5;color:var(--muted)}.sheet-kicker{font-size:10px;letter-spacing:.13em;font-weight:900;color:var(--sage-dark);margin-bottom:7px}.topic-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:14px 0}.topic{border:1px solid var(--line);border-radius:18px;padding:14px;background:#f3eedf;text-align:left;cursor:pointer;color:var(--ink)}.topic.selected{background:#dfe9d4;border-color:#738965;box-shadow:inset 0 0 0 1px #738965}.topic strong{display:block;margin-top:6px}.topic small{display:block;color:var(--muted);line-height:1.3;margin-top:4px}.segmented{display:flex;gap:7px}.segmented button{flex:1;border:1px solid var(--line);background:#f3eedf;padding:11px;border-radius:13px;font-weight:800;color:var(--ink)}.segmented button.selected{background:var(--sage-dark);color:#fff}.range-label{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:11px}.range-label input{flex:1;accent-color:var(--sage-dark)}.cta{display:block;width:100%;background:var(--sage-dark);padding:13px;margin-top:14px;font-size:14px}.danger-btn{border:0;background:transparent;color:#9a5144;font-weight:800;padding:16px 0;cursor:pointer}.request-box{background:#f3eedf;border:1px solid var(--line);border-radius:20px;padding:16px;margin-top:18px}.request-box h3{margin-top:0}.request{display:flex;gap:8px;margin-top:12px}.request input{flex:1;border:1px solid var(--line);border-radius:14px;padding:13px;background:white;font:inherit;min-width:0}.request button{border:0;border-radius:14px;padding:0 15px;background:var(--sage-dark);color:white;font-weight:800}.trail{display:flex;gap:7px;flex-wrap:wrap;align-items:center;margin:18px 0}.trail span{background:#f1ead8;border:1px solid var(--line);padding:8px 10px;border-radius:999px;font-size:12px;font-weight:700}.trail b{color:var(--muted)}.mini-list{display:grid;gap:7px}.mini-list button{display:flex;align-items:center;gap:10px;border:1px solid var(--line);background:#f3eedf;border-radius:15px;padding:10px;text-align:left}.mini-list button span{font-size:20px}.mini-list button div{flex:1}.mini-list strong,.mini-list small{display:block}.mini-list small{color:var(--muted);margin-top:2px}.mini-list b{font-size:20px;color:var(--muted)}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.stat{background:#f0ebdc;border-radius:18px;padding:16px;text-align:center}.stat b{display:block;font:700 25px Georgia,serif}.stat span{font-size:11px;color:var(--muted)}.journey-paper{margin-top:14px}.big-number{font:700 34px Georgia,serif!important;color:var(--ink)!important;margin:0!important}.shelf-chip{display:inline-block;background:#f0ead9;border:1px solid var(--line);border-radius:999px;padding:7px 9px;margin:3px;font-size:11px;font-weight:700}.welcome{text-align:center;padding-top:8px}.melon{font-size:60px;margin-bottom:8px}.welcome h2{margin-left:0!important}.welcome-points{display:grid;gap:8px;text-align:left;margin:18px 0}.welcome-points span{background:#f2ecdc;border-radius:14px;padding:11px;font-size:13px}.install-prompt{position:fixed;left:50%;bottom:84px;transform:translateX(-50%);width:min(520px,calc(100% - 24px));z-index:30;background:rgba(255,250,240,.97);border:1px solid var(--line);box-shadow:var(--shadow);border-radius:18px;padding:12px 13px;display:flex;align-items:center;gap:9px}.install-prompt.hidden{display:none}.install-prompt div{flex:1}.install-prompt strong,.install-prompt span{display:block}.install-prompt strong{font-size:12px}.install-prompt span{font-size:11px;color:var(--muted);margin-top:2px}.install-prompt button{border:0;border-radius:12px;background:var(--sage-dark);color:white;padding:9px 13px;font-weight:800}.install-prompt .mini-close{background:transparent;color:var(--muted);padding:5px;font-size:18px}.toast{position:fixed;z-index:100;left:50%;bottom:100px;transform:translateX(-50%);background:#263329;color:white;padding:10px 14px;border-radius:999px;font-size:12px;font-weight:800;box-shadow:var(--shadow)}
 @media(min-width:700px){body{padding:18px}.app-shell{border-radius:32px;box-shadow:0 20px 80px rgba(31,45,31,.22);height:calc(100dvh - 36px)}}
 
 
@@ -81,8 +81,6 @@ body{background:#071116}
 .card-top .pill{border:1px solid rgba(121,232,255,.18);background:rgba(6,16,20,.55);box-shadow:0 0 20px rgba(121,232,255,.05)}
 .paper{background:rgba(246,250,241,.94);box-shadow:0 16px 50px rgba(0,0,0,.26),0 0 30px rgba(121,232,255,.05);border-color:rgba(255,255,255,.5)}
 .actions button,.sub-actions button{background:rgba(5,15,19,.62);border-color:rgba(121,232,255,.16);box-shadow:0 0 18px rgba(121,232,255,.04)}
-.bottom-nav{background:rgba(7,16,21,.88);border-top:1px solid rgba(121,232,255,.13);grid-template-columns:repeat(5,1fr);box-shadow:0 -12px 35px rgba(0,0,0,.2)}.nav-btn{color:#76908e}.nav-btn.active{color:#79e8ff;text-shadow:0 0 15px rgba(121,232,255,.6)}
-.nav-btn.active:after{content:"";display:block;width:18px;height:2px;margin:3px auto 0;background:#79e8ff;border-radius:4px;box-shadow:0 0 12px #79e8ff}
 @keyframes wmBreathe{from{transform:scale(1.02) translate3d(0,0,0)}to{transform:scale(1.07) translate3d(-1%,1%,0)}}
 @keyframes wmScan{0%{transform:translateY(-100%);opacity:0}10%,90%{opacity:.18}100%{transform:translateY(100%);opacity:0}}
 @keyframes wmPulse{50%{box-shadow:0 0 0 5px rgba(121,232,255,.03),0 0 28px rgba(121,232,255,.28)}}
@@ -124,13 +122,6 @@ body{background:#071116}
 .top-actions{display:flex;gap:5px;align-items:center}
 .top-tool{height:46px;min-width:52px;padding:6px 7px;border-radius:13px;border:1px solid rgba(121,232,255,.15);background:linear-gradient(180deg,rgba(121,232,255,.09),rgba(121,232,255,.025));color:#bcefeb;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2px;font:800 7px/1 ui-monospace,monospace;letter-spacing:.08em;cursor:pointer;box-shadow:inset 0 0 18px rgba(121,232,255,.035),0 4px 18px rgba(0,0,0,.16);transition:.18s ease}
 .top-tool .tool-icon{font:700 16px/1 system-ui}.top-tool:active{transform:scale(.94);border-color:rgba(121,232,255,.5);background:rgba(121,232,255,.14)}.top-tool.sound-active{border-color:rgba(121,232,255,.55);box-shadow:0 0 18px rgba(121,232,255,.16),inset 0 0 18px rgba(121,232,255,.07)}
-.bottom-nav{height:82px;grid-template-columns:repeat(5,1fr);padding:7px 7px 9px;gap:4px;border-top:1px solid rgba(121,232,255,.17);background:rgba(4,12,17,.94);box-shadow:0 -18px 50px rgba(0,0,0,.38);overflow:visible}
-.nav-btn{position:relative;border:1px solid transparent;border-radius:15px;color:#66817f;font:800 8px/1 ui-monospace,monospace;letter-spacing:.08em;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;transition:.2s ease}
-.nav-btn i{font-style:normal;font:700 21px/1 system-ui;color:#7b9b98;transition:.2s ease}.nav-btn span{font-size:8px;margin:0}.nav-btn:active{transform:scale(.93)}
-.nav-btn.active{color:#bdf8f3;background:linear-gradient(180deg,rgba(121,232,255,.13),rgba(121,232,255,.035));border-color:rgba(121,232,255,.18);box-shadow:inset 0 0 20px rgba(121,232,255,.05),0 0 20px rgba(121,232,255,.06);text-shadow:0 0 12px rgba(121,232,255,.55)}
-.nav-btn.active i{color:#79e8ff;text-shadow:0 0 18px rgba(121,232,255,.8)}.nav-btn.active:after{content:"";position:absolute;bottom:-1px;left:50%;width:22px;height:2px;transform:translateX(-50%);background:#79e8ff;border-radius:9px;box-shadow:0 0 13px #79e8ff}
-.nav-map{margin-top:-9px;height:84px;background:radial-gradient(circle at 50% 20%,rgba(121,232,255,.13),rgba(7,16,21,.96) 62%);border-color:rgba(121,232,255,.16);box-shadow:0 -4px 22px rgba(121,232,255,.06),inset 0 0 24px rgba(121,232,255,.04)}
-.nav-map i{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(121,232,255,.2);background:rgba(121,232,255,.06)}
 @keyframes liveBlink{50%{opacity:.35}}
 /* Map spacing: a deliberate 2-column command layout */
 .map-paper{min-height:860px}
@@ -303,55 +294,6 @@ body{
 .sub-actions button{
   border-color:rgba(255,255,255,.16);
 }
-.bottom-nav{
-  height:82px;
-  left:10px;right:10px;bottom:9px;
-  border:1px solid rgba(75,96,77,.12);
-  border-radius:25px;
-  padding:6px;
-  gap:5px;
-  background:rgba(255,253,246,.92);
-  box-shadow:0 14px 38px rgba(46,61,48,.15);
-  backdrop-filter:blur(18px);
-}
-.nav-btn{
-  border-radius:18px;
-  color:#849184;
-  font:800 8px/1 ui-monospace,monospace;
-  letter-spacing:.04em;
-}
-.nav-btn i{color:#819181;font-size:20px}
-.nav-btn.active{
-  color:#416047;
-  background:#e7f1e1;
-  border-color:rgba(111,157,107,.13);
-  box-shadow:inset 0 0 0 1px rgba(255,255,255,.7);
-  text-shadow:none;
-}
-.nav-btn.active i{color:#56845a;text-shadow:none}
-.nav-btn.active:after{
-  background:#72a86c;
-  box-shadow:0 0 10px rgba(114,168,108,.55);
-  bottom:3px;
-}
-.nav-map{
-  margin-top:-17px;
-  height:88px;
-  border-radius:22px;
-  background:linear-gradient(145deg,#e6f2df,#dceef0);
-  border:1px solid rgba(91,131,95,.16);
-  box-shadow:0 10px 24px rgba(75,108,80,.16);
-}
-.nav-map i{
-  width:48px;height:48px;
-  border:0;
-  background:#fff9df;
-  box-shadow:0 6px 18px rgba(87,92,61,.14);
-  font-size:23px;
-}
-.nav-map.active{
-  background:linear-gradient(145deg,#dcefd7,#d7edf0);
-}
 .sheet-backdrop{background:rgba(38,50,40,.24);backdrop-filter:blur(7px)}
 .sheet-card{
   background:linear-gradient(180deg,#fffdf5,#f4f0df);
@@ -498,24 +440,8 @@ body{
   .top-tool .tool-icon{font-size:15px}
   .feed{padding:9px 7px 16px}
   .card{padding:22px 15px 20px;border-radius:27px}
-  .bottom-nav{left:7px;right:7px;bottom:7px}
   .map-paper{min-height:920px}
   .world-pin{min-width:132px;min-height:78px}
-}
-
-
-/* SCOTTS TOT PAGE */
-.nav-ai{
-  background:linear-gradient(145deg,#fff1d8,#ffe4df);
-  border:1px solid rgba(255,111,97,.13);
-  color:#7b6255;
-  box-shadow:0 7px 18px rgba(166,104,77,.10);
-}
-.nav-ai i{font-size:19px}
-.nav-ai.active{
-  background:linear-gradient(145deg,#ffe8cf,#ffe0df);
-  color:#704f47;
-  box-shadow:0 8px 22px rgba(166,104,77,.15);
 }
 .ai-page{
   height:100%;
@@ -636,71 +562,9 @@ body{
 .ai-thinking i{width:6px;height:6px;border-radius:50%;background:#7ca473;animation:aiBounce .8s infinite alternate}
 .ai-thinking i:nth-child(2){animation-delay:.15s}.ai-thinking i:nth-child(3){animation-delay:.3s}
 @media(max-width:430px){
-  .bottom-nav{grid-template-columns:repeat(6,1fr);gap:2px;padding:5px}
-  .nav-btn{font-size:17px}
-  .nav-btn span{font-size:7px}
-  .nav-map{height:80px}
-  .nav-map i{width:38px;height:38px}
-  .nav-ai i{font-size:17px}
   .ai-page{padding:13px 9px 103px}
   .ai-hero{padding:19px 16px 16px;border-radius:25px}
   .ai-chat{border-radius:24px}
-}
-
-
-/* WATERMELONS 6.0 • LIVING REELS + CLEAN DOCK */
-.bottom-nav{
-  left:12px;right:12px;bottom:10px;
-  width:auto;
-  height:70px;
-  padding:5px;
-  display:grid;
-  grid-template-columns:repeat(6,minmax(0,1fr));
-  gap:4px;
-  align-items:stretch;
-  border-radius:24px;
-  z-index:50;
-  pointer-events:auto;
-}
-.nav-btn{
-  width:100%;
-  min-width:0;
-  height:100%;
-  margin:0;
-  padding:5px 2px;
-  border-radius:18px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  gap:3px;
-  transform:none !important;
-}
-.nav-btn i{
-  width:auto;height:auto;
-  font-size:19px;
-  line-height:1;
-}
-.nav-btn span{
-  white-space:nowrap;
-  font-size:7px;
-  letter-spacing:.02em;
-}
-.nav-map,.nav-ai{
-  width:100%;
-  height:100%;
-  margin:0;
-  border-radius:18px;
-  transform:none !important;
-}
-.nav-map i,.nav-ai i{
-  width:auto;height:auto;
-  background:none;
-  box-shadow:none;
-  border:0;
-}
-.nav-map.active,.nav-ai.active{
-  transform:none !important;
 }
 .feed{
   padding-bottom:96px;
@@ -874,13 +738,6 @@ body{
   margin-bottom:4px;
 }
 @media(max-width:430px){
-  .bottom-nav{
-    left:6px;right:6px;bottom:6px;height:68px;
-    grid-template-columns:repeat(6,minmax(0,1fr));
-  }
-  .nav-btn{border-radius:16px}
-  .nav-btn i{font-size:17px}
-  .nav-btn span{font-size:6.5px}
   .feed{padding-bottom:92px}
   .map-view{padding-bottom:100px}
 }
@@ -888,79 +745,6 @@ body{
 
 /* WATERMELONS 7.0 • FINAL DOCK + REEL LAYOUT */
 .app-shell{overflow:hidden}
-.bottom-nav{
-  position:absolute !important;
-  left:8px !important;
-  right:8px !important;
-  bottom:8px !important;
-  width:auto !important;
-  height:68px !important;
-  box-sizing:border-box !important;
-  display:grid !important;
-  grid-template-columns:repeat(6,minmax(0,1fr)) !important;
-  gap:3px !important;
-  padding:4px !important;
-  margin:0 !important;
-  border-radius:23px !important;
-  z-index:40 !important;
-  overflow:hidden !important;
-}
-.bottom-nav .nav-btn,
-.bottom-nav .nav-btn.nav-map,
-.bottom-nav .nav-btn.nav-ai{
-  box-sizing:border-box !important;
-  width:100% !important;
-  min-width:0 !important;
-  max-width:none !important;
-  height:100% !important;
-  min-height:0 !important;
-  margin:0 !important;
-  padding:4px 1px !important;
-  display:flex !important;
-  flex:initial !important;
-  position:relative !important;
-  left:auto !important;
-  right:auto !important;
-  top:auto !important;
-  bottom:auto !important;
-  transform:none !important;
-  border-radius:17px !important;
-  justify-self:stretch !important;
-  align-self:stretch !important;
-  align-items:center !important;
-  justify-content:center !important;
-  gap:3px !important;
-  overflow:hidden !important;
-}
-.bottom-nav .nav-btn i,
-.bottom-nav .nav-map i,
-.bottom-nav .nav-ai i{
-  width:auto !important;
-  height:auto !important;
-  min-width:0 !important;
-  min-height:0 !important;
-  margin:0 !important;
-  padding:0 !important;
-  font-size:18px !important;
-  line-height:1 !important;
-  background:none !important;
-  border:0 !important;
-  box-shadow:none !important;
-}
-.bottom-nav .nav-btn span{
-  display:block !important;
-  width:100% !important;
-  overflow:hidden !important;
-  text-overflow:ellipsis !important;
-  white-space:nowrap !important;
-  text-align:center !important;
-  font-size:7px !important;
-  line-height:1 !important;
-  margin:0 !important;
-}
-.bottom-nav .nav-btn.active:after{bottom:3px !important}
-.bottom-nav .nav-map.active,
-.bottom-nav .nav-ai.active{height:100% !important;margin:0 !important}
 .feed{
   height:calc(100dvh - 82px - 72px) !important;
   padding-bottom:0 !important;
@@ -990,14 +774,6 @@ body{
 .ai-page{padding-bottom:92px !important}
 
 @media(max-width:430px){
-  .bottom-nav{
-    left:5px !important;right:5px !important;bottom:5px !important;
-    height:66px !important;
-    grid-template-columns:repeat(6,minmax(0,1fr)) !important;
-  }
-  .bottom-nav .nav-btn{border-radius:16px !important}
-  .bottom-nav .nav-btn i{font-size:17px !important}
-  .bottom-nav .nav-btn span{font-size:6.5px !important}
   .feed .card{padding:23px 15px 116px !important}
 }
 
@@ -1056,6 +832,66 @@ body{
   font:800 7px/1 ui-monospace,monospace;letter-spacing:.1em;
 }
 
+
+/* WATERMELONS 8.0 • CLEAN HOTBAR FOUNDATION */
+.bottom-nav{
+  position:absolute;left:10px;right:10px;bottom:10px;
+  height:74px;z-index:100;
+  display:grid;grid-template-columns:repeat(6,minmax(0,1fr));
+  gap:5px;padding:5px;
+  margin:0;border:1px solid rgba(80,105,82,.14);
+  border-radius:24px;background:rgba(255,253,246,.96);
+  box-shadow:0 16px 42px rgba(42,58,44,.20);
+  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  overflow:visible;
+}
+.nav-btn{
+  appearance:none;-webkit-appearance:none;
+  width:100%;height:100%;min-width:0;min-height:0;
+  margin:0;padding:4px 2px;
+  border:1px solid transparent;border-radius:17px;
+  background:transparent;color:#829083;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:4px;overflow:hidden;
+  cursor:pointer;touch-action:manipulation;
+  font:800 8px/1 ui-monospace,SFMono-Regular,Menlo,monospace;
+  letter-spacing:.04em;
+  box-sizing:border-box;
+}
+.nav-icon{display:block;width:24px;height:24px;line-height:24px;text-align:center;font:700 20px/24px system-ui,sans-serif;flex:0 0 24px}
+.nav-label{display:block;width:100%;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;font:800 7px/10px ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.03em}
+.nav-btn.active{color:#416047;background:#e7f1e1;border-color:rgba(111,157,107,.16);box-shadow:inset 0 0 0 1px rgba(255,255,255,.72),0 5px 14px rgba(83,112,78,.08)}
+.nav-btn.active .nav-icon{color:#56845a}
+.nav-btn:active{transform:scale(.96)}
+.nav-btn:focus-visible{outline:2px solid #72a86c;outline-offset:1px}
+.feed{height:calc(100dvh - 92px - 56px - 74px)!important;padding-bottom:12px!important}
+.feed .card{padding-bottom:104px!important}
+.ai-page{padding-bottom:88px!important}
+.map-view{padding-bottom:88px!important}
+@media(max-width:430px){
+  .bottom-nav{left:6px;right:6px;bottom:6px;height:70px;gap:3px;padding:4px}
+  .nav-btn{border-radius:16px;padding:3px 1px;gap:3px}
+  .nav-icon{font-size:18px;line-height:22px;width:22px;height:22px;flex-basis:22px}
+  .nav-label{font-size:6.5px;line-height:9px}
+  .feed{height:calc(100dvh - 92px - 56px - 70px)!important}
+}
+
+/* WATERMELONS 8.0 • FRESH SCOTTSTOT PAGE */
+.ai-page{display:flex;flex-direction:column;gap:12px;overflow-y:auto;padding:12px 10px 92px!important;scroll-snap-type:none!important}
+.ai-hero{flex:0 0 auto;padding:22px 18px 18px;border-radius:26px;background:linear-gradient(145deg,#fff8df,#f0f6e8 55%,#e8f2f2);border:1px solid rgba(111,157,107,.14);box-shadow:0 12px 30px rgba(60,82,61,.10)}
+.ai-hero h2{margin:5px 0 7px;font:700 31px/1.05 Georgia,serif;color:#294032}
+.ai-hero p{margin:0;color:#6f7c70;font-size:13px;line-height:1.45}
+.ai-online{display:inline-flex;align-items:center;gap:7px;margin-top:12px;padding:7px 10px;border-radius:999px;background:#e5f2df;color:#557552;font:800 9px ui-monospace,monospace;letter-spacing:.06em}
+.ai-online span{width:7px;height:7px;border-radius:50%;background:#71aa67;box-shadow:0 0 10px rgba(113,170,103,.7)}
+.ai-chat{flex:1 1 auto;min-height:170px;overflow-y:auto;padding:4px 2px 6px;display:flex;flex-direction:column;gap:9px;scrollbar-width:none}
+.ai-chat::-webkit-scrollbar{display:none}
+.ai-empty{min-height:170px;display:grid;place-items:center;text-align:center;color:#718073;padding:20px}.ai-empty .big{font-size:40px;margin-bottom:8px}.ai-empty strong{display:block;color:#405746;font-size:15px}.ai-empty span{display:block;max-width:310px;margin:6px auto 0;font-size:12px;line-height:1.45}
+.ai-msg{max-width:88%;padding:11px 13px;border-radius:18px;font-size:13px;line-height:1.48;white-space:pre-wrap;word-break:break-word;box-shadow:0 5px 16px rgba(53,72,56,.07)}
+.ai-msg.user{align-self:flex-end;background:#e2f0df;color:#38533b;border-bottom-right-radius:6px}.ai-msg.bot{align-self:flex-start;background:#fffdf4;color:#354439;border:1px solid rgba(77,100,79,.10);border-bottom-left-radius:6px}.ai-msg .label{display:block;margin-bottom:4px;color:#6f966b;font:800 8px ui-monospace,monospace;letter-spacing:.08em}
+.ai-thinking{align-self:flex-start;display:flex;align-items:center;gap:5px;padding:8px 11px;color:#7b887b;font-size:11px}.ai-thinking i{width:6px;height:6px;border-radius:50%;background:#7ca473;animation:wmAiDot .8s infinite alternate}.ai-thinking i:nth-child(2){animation-delay:.15s}.ai-thinking i:nth-child(3){animation-delay:.3s}@keyframes wmAiDot{to{opacity:.25;transform:translateY(-2px)}}
+.ai-composer{flex:0 0 auto;padding:10px;border-radius:22px;background:rgba(255,253,246,.94);border:1px solid rgba(77,100,79,.11);box-shadow:0 10px 28px rgba(53,72,56,.10)}
+.ai-input-row{display:flex;gap:7px}.ai-input{flex:1;min-width:0;height:44px;border:1px solid rgba(77,100,79,.14);border-radius:15px;background:#fffdf7;color:#314337;padding:0 13px;font:500 13px system-ui,sans-serif;outline:none}.ai-input:focus{border-color:#82a77b;box-shadow:0 0 0 3px rgba(130,167,123,.12)}.ai-send{width:46px;height:44px;border:0;border-radius:15px;background:#6f9d6b;color:white;font-size:20px;cursor:pointer}.ai-send:disabled{opacity:.55;cursor:wait}.ai-tools-row{display:flex;gap:6px;overflow-x:auto;padding-top:7px;scrollbar-width:none}.ai-tools-row::-webkit-scrollbar{display:none}.ai-mini{flex:0 0 auto;border:0;border-radius:12px;padding:8px 10px;background:#f0eee1;color:#687566;font:800 9px ui-monospace,monospace;cursor:pointer}.ai-mini:active{transform:scale(.97)}
+
 </style>
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -1083,14 +919,13 @@ body{
 
   <main id="feed" class="feed" aria-live="polite"></main>
 
-  <nav class="bottom-nav" aria-label="Main navigation">
-    <div class="nav-glow"></div>
-    <button type="button" class="nav-btn active" data-tab="feed"><i>⌂</i><span>HOME</span></button>
-    <button type="button" class="nav-btn" data-tab="explore"><i>✦</i><span>EXPLORE</span></button>
-    <button type="button" class="nav-btn" data-tab="map"><i>◉</i><span>MAP</span></button>
-    <button type="button" class="nav-btn nav-ai" data-tab="ai"><i>🧠</i><span>SCOTTS</span></button>
-    <button type="button" class="nav-btn" data-tab="saved"><i>♡</i><span>SAVED</span></button>
-    <button type="button" class="nav-btn" data-tab="journey"><i>◌</i><span>JOURNEY</span></button>
+  <nav id="mainNav" class="bottom-nav" aria-label="Main navigation">
+    <button type="button" class="nav-btn active" data-tab="feed"><span class="nav-icon">⌂</span><span class="nav-label">HOME</span></button>
+    <button type="button" class="nav-btn" data-tab="explore"><span class="nav-icon">✦</span><span class="nav-label">EXPLORE</span></button>
+    <button type="button" class="nav-btn" data-tab="map"><span class="nav-icon">◉</span><span class="nav-label">MAP</span></button>
+    <button type="button" class="nav-btn" data-tab="ai"><span class="nav-icon">🧠</span><span class="nav-label">SCOTTS</span></button>
+    <button type="button" class="nav-btn" data-tab="saved"><span class="nav-icon">♡</span><span class="nav-label">SAVED</span></button>
+    <button type="button" class="nav-btn" data-tab="journey"><span class="nav-icon">◌</span><span class="nav-label">JOURNEY</span></button>
   </nav>
 </div>
 
@@ -1278,14 +1113,7 @@ function settingsSheet(){
  document.getElementById('resetBtn').onclick=()=>{if(confirm('Reset saved items, progress, and preferences on this device?')){localStorage.clear();location.reload();}};
 }
 
-document.querySelectorAll('.nav-btn').forEach(btn=>btn.onclick=()=>{
-  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-  state.tab=btn.dataset.tab;
-  if(state.tab==='map') showMap();
-  else if(state.tab==='ai') showAIPage();
-  else renderTab();
-});
+
 function renderTab(){
  if(state.tab==='feed'){renderFeed(nextBatch(8));return}
  if(state.tab==='saved'){const items=uniqueItems([...BANK,...state.generated]).filter(x=>state.saved.includes(x.id));renderFeed(items.length?items:[{id:'empty',theme:'literature',tag:'Saved Garden',title:'Your saved ideas will live here',dek:'When something makes you stop scrolling, save it.',body:'Try the ☆ Save button on any card. Your collection stays on this device.',type:'text'}]);return}
@@ -1522,47 +1350,71 @@ document.addEventListener('visibilitychange',async()=>{if(!document.hidden&&wmPl
 const wmOldApplyTheme=wmApplyTheme;wmApplyTheme=function(k){wmOldApplyTheme(k);if(wmPlaying){wmStopSound();setTimeout(()=>wmStartSound(),180)}};
 
 
-/* SCOTTSTOT PAGE */
-let aiChat = [];
+/* WATERMELONS 8.0 • CLEAN NAVIGATION + SCOTTSTOT FOUNDATION */
+const SCOTTS_TOT_URL='https://scottstot.scootyblocks.workers.dev';
+let aiChat=[];
+let aiBusy=false;
+
+function setActiveNav(tab){
+  state.tab=tab;
+  document.querySelectorAll('#mainNav .nav-btn').forEach(btn=>{
+    btn.classList.toggle('active',btn.dataset.tab===tab);
+  });
+}
+
+function openTab(tab){
+  setActiveNav(tab);
+  if(tab==='map') showMap();
+  else if(tab==='ai') showAIPage();
+  else renderTab();
+}
+
+document.querySelectorAll('#mainNav .nav-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>openTab(btn.dataset.tab));
+});
+
+document.getElementById('aiBtn')?.addEventListener('click',()=>openTab('ai'));
 
 function showAIPage(){
   const feedEl=document.getElementById('feed');
   feedEl.className='feed ai-page';
   feedEl.innerHTML=`
     <section class="ai-hero">
-      <div class="kicker">🍉 Watermelons intelligence garden</div>
-      <h2>Talk to ScottsTot.</h2>
-      <p>Ask a question, chase a rabbit hole, or tell it what you want to learn. It can explain, connect, challenge, and generate fresh ideas.</p>
-      <div class="ai-online"><span></span> SCOTTS TOT ONLINE</div>
+      <div class="kicker">🍉 WATERMELONS // SCOTTS TOT</div>
+      <h2>What are you curious about?</h2>
+      <p>Ask a question, chase a rabbit hole, request a concept, or make ScottsTot quiz you. This is the direct AI connection, not the local card generator.</p>
+      <div class="ai-online"><span></span> SCOTTSTOT CONNECTION READY</div>
     </section>
     <section id="aiChat" class="ai-chat"></section>
     <section class="ai-composer">
       <div class="ai-input-row">
-        <input id="aiPageInput" class="ai-input" autocomplete="off" placeholder="What are you curious about?">
+        <input id="aiPageInput" class="ai-input" autocomplete="off" placeholder="Try: Why do people conform?">
         <button type="button" id="aiPageSend" class="ai-send" aria-label="Ask ScottsTot">➤</button>
       </div>
       <div class="ai-tools-row">
         <button type="button" class="ai-mini" id="aiPageSurprise">🍉 SURPRISE ME</button>
-        <button type="button" class="ai-mini" id="aiPageConcept">💡 GIVE ME A CONCEPT</button>
+        <button type="button" class="ai-mini" id="aiPageConcept">💡 CONCEPT</button>
         <button type="button" class="ai-mini" id="aiPageQuiz">❓ QUIZ ME</button>
       </div>
     </section>`;
+
   renderAIChat();
   const input=document.getElementById('aiPageInput');
-  const ask=()=>askScotts(input.value.trim());
-  document.getElementById('aiPageSend').onclick=ask;
+  const send=document.getElementById('aiPageSend');
+  const ask=()=>askScotts(input?.value.trim()||'');
+  send.onclick=ask;
   input.onkeydown=e=>{if(e.key==='Enter')ask()};
-  document.getElementById('aiPageSurprise').onclick=()=>askScotts('Surprise me with something fascinating I probably do not know. Pick from psychology, philosophy, Greek mythology, Christian faith, history, science, literature, or lifting and nutrition.');
-  document.getElementById('aiPageConcept').onclick=()=>askScotts('Give me one fascinating concept that will make me think differently. Explain why it matters and give a memorable example.');
-  document.getElementById('aiPageQuiz').onclick=()=>askScotts('Quiz me on something interesting. Ask me one question first and wait for my answer. Do not reveal the answer yet.');
-  setTimeout(()=>input.focus(),80);
+  document.getElementById('aiPageSurprise').onclick=()=>askScotts('Surprise me with one fascinating thing I probably do not know. Pick from psychology, philosophy, Greek mythology, Christian faith, history, science, literature, or lifting and nutrition.');
+  document.getElementById('aiPageConcept').onclick=()=>askScotts('Give me one fascinating concept that will make me think differently. Explain it clearly and give me a memorable example.');
+  document.getElementById('aiPageQuiz').onclick=()=>askScotts('Quiz me on something interesting. Ask exactly one question and wait for my answer. Do not reveal the answer yet.');
+  setTimeout(()=>input?.focus(),50);
 }
 
 function renderAIChat(){
   const box=document.getElementById('aiChat');
   if(!box)return;
   if(!aiChat.length){
-    box.innerHTML=`<div class="ai-empty"><div><div class="big">🧠</div><strong>Your curiosity starts here.</strong><span>Ask ScottsTot anything you want to understand. This can be your little pocket tutor, idea generator, or rabbit-hole machine.</span></div></div>`;
+    box.innerHTML=`<div class="ai-empty"><div><div class="big">🧠</div><strong>Your curiosity starts here.</strong><span>ScottsTot is ready. Ask it something and the response will come back through the Watermelons garden.</span></div></div>`;
     return;
   }
   box.innerHTML=aiChat.map(m=>m.role==='user'
@@ -1572,229 +1424,131 @@ function renderAIChat(){
 }
 
 async function askScotts(question){
-  if(!question || aiBusy)return;
+  question=String(question||'').trim();
+  if(!question||aiBusy)return;
   const box=document.getElementById('aiChat');
   const input=document.getElementById('aiPageInput');
+  const send=document.getElementById('aiPageSend');
   aiBusy=true;
-  const sendBtn=document.getElementById('aiPageSend');
-  if(sendBtn){sendBtn.disabled=true;sendBtn.textContent='…';}
+  if(send){send.disabled=true;send.textContent='…';}
   aiChat.push({role:'user',text:question});
-  renderAIChat();
   if(input)input.value='';
+  renderAIChat();
   if(box){
     box.insertAdjacentHTML('beforeend',`<div class="ai-thinking" id="aiThinking"><i></i><i></i><i></i><span>ScottsTot is thinking…</span></div>`);
     box.scrollTop=box.scrollHeight;
   }
   try{
     const recent=aiChat.slice(-8).map(m=>(m.role==='user'?'User: ':'ScottsTot: ')+m.text).join('\n');
-    const prompt=`You are ScottsTot, the friendly AI learning companion inside an app called Watermelons.
-The user is asking you questions to learn, explore ideas, and generate educational content.
-Be accurate, curious, conversational, and concise. If the user asks for a quiz, ask only the next question and wait for their answer.
-If the user asks for an explanation, teach rather than merely define. Avoid pretending to have personal experiences.
+    const prompt=`You are ScottsTot, the friendly AI learning companion inside Watermelons.
+Teach accurately and conversationally. Be concise but useful. If the user asks for a quiz, ask only the next question and wait for the answer.
 Conversation so far:
 ${recent}
 Respond to the user's latest message.`;
-    const response=await fetch(SCOTTS_TOT_URL+'/generate?wm='+Date.now(),{
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({prompt})
-    });
-    const data=await response.json();
-    if(!response.ok || !data.ok || !data.text)throw new Error('AI request failed');
-    aiChat.push({role:'bot',text:data.text.trim()});
-    // Keep a compact local memory of the conversation.
-    state.aiChat=aiChat.slice(-20);
-    save('watermelons-ai-chat',state.aiChat);
+    const controller=new AbortController();
+    const timeout=setTimeout(()=>controller.abort(),25000);
+    let response;
+    try{
+      response=await fetch(SCOTTS_TOT_URL+'/generate?source=watermelons&ts='+Date.now(),{
+        method:'POST',
+        mode:'cors',
+        cache:'no-store',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({prompt}),
+        signal:controller.signal
+      });
+    }finally{clearTimeout(timeout)}
+    const raw=await response.text();
+    let data;
+    try{data=JSON.parse(raw)}catch{throw new Error('Worker returned non-JSON data: '+raw.slice(0,120))}
+    if(!response.ok||!data.ok||!data.text)throw new Error(data.error?.message||data.error||('Worker returned HTTP '+response.status));
+    aiChat.push({role:'bot',text:String(data.text).trim()});
+    aiChat=aiChat.slice(-20);
+    save('watermelons-ai-chat',aiChat);
   }catch(err){
-    aiChat.push({role:'bot',text:'I hit a little snag reaching ScottsTot. Try that question again in a moment.'});
+    const message=err?.name==='AbortError'
+      ? 'ScottsTot took too long to answer. The connection may be asleep. Try again.'
+      : `I could not reach ScottsTot right now. ${err?.message||'Unknown connection error.'}`;
+    aiChat.push({role:'bot',text:message});
+    aiChat=aiChat.slice(-20);
   }finally{
     aiBusy=false;
-    const sendBtn=document.getElementById('aiPageSend');
-    if(sendBtn){sendBtn.disabled=false;sendBtn.textContent='➤';}
+    if(send){send.disabled=false;send.textContent='➤';}
     renderAIChat();
   }
 }
 
-/* Restore the conversation when returning to the AI page. */
 try{
   const storedAI=load('watermelons-ai-chat',[]);
   if(Array.isArray(storedAI))aiChat=storedAI.slice(-20);
 }catch{}
 
-/* COMMAND-DECK NAVIGATION */
-document.querySelectorAll('.nav-btn').forEach(btn=>{
-  btn.onclick=()=>{
-    state.tab=btn.dataset.tab;
-    document.querySelectorAll('.nav-btn').forEach(x=>x.classList.toggle('active',x===btn));
-    if(state.tab==='map') showMap();
-    else if(state.tab==='ai') showAIPage();
-    else if(typeof renderTab==='function') renderTab();
-  };
-});
-
-/* Top ScottsTot button simply switches to the same AI page. */
-document.getElementById('aiBtn')?.addEventListener('click',(e)=>{
-  e.preventDefault();
-  state.tab='ai';
-  document.querySelectorAll('.nav-btn').forEach(x=>x.classList.toggle('active',x.dataset.tab==='ai'));
-  showAIPage();
-});
-
-if('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(()=>{});
-if(!state.onboarding)onboarding();else renderFeed(nextBatch(8));
-
-
-/* SCOTTSTOT AI BRIDGE */
-const SCOTTS_TOT_URL = 'https://scottstot.scootyblocks.workers.dev';
-let aiBusy = false;
-
 function aiTopicForRequest(request=''){
-  const q = request.toLowerCase();
-  const hit = TOPICS.find(t => q.includes(t.name.toLowerCase()) || q.includes(t.id));
-  return hit ? hit.id : (selectedTopics()[0] || 'psychology');
+  const q=request.toLowerCase();
+  const hit=TOPICS.find(t=>q.includes(t.name.toLowerCase())||q.includes(t.id));
+  return hit?hit.id:(selectedTopics()[0]||'psychology');
 }
 
-function aiCardFromText(text, request=''){
-  const clean = String(text || '').replace(/\s+/g,' ').trim();
-  if(!clean) return null;
-  const theme = aiTopicForRequest(request);
-  const t = topic(theme);
-  let title = clean.split(/[.!?]/)[0].trim();
-  if(title.length < 8 || title.length > 70) title = request ? request.slice(0,58) : 'A fresh idea from ScottsTot';
-  if(title.length > 70) title = title.slice(0,67) + '…';
-  const dek = request ? `ScottsTot wandered into ${t.name.toLowerCase()} because you asked.` : `A fresh idea, generated just for your Watermelons garden.`;
-  return {
-    id:'ai-'+Date.now()+'-'+Math.random().toString(36).slice(2,8),
-    theme, type:'concept', tag:`${t.name} · ScottsTot`,
-    title, dek, body:clean
-  };
+function aiCardFromText(text,request=''){
+  const clean=String(text||'').replace(/\s+/g,' ').trim();
+  if(!clean)return null;
+  const theme=aiTopicForRequest(request),t=topic(theme);
+  let title=clean.split(/[.!?]/)[0].trim();
+  if(title.length<8||title.length>70)title=request?request.slice(0,58):'A fresh idea from ScottsTot';
+  if(title.length>70)title=title.slice(0,67)+'…';
+  return {id:'ai-'+Date.now()+'-'+Math.random().toString(36).slice(2,8),theme,type:'concept',tag:`${t.name} · ScottsTot`,title,dek:request?`ScottsTot wandered into ${t.name.toLowerCase()} because you asked.`:'A fresh idea, generated just for your Watermelons garden.',body:clean};
 }
 
 async function fetchAI(request=''){
-  const prompt = request
+  const prompt=request
     ? `Create one fascinating learning card about: ${request}. Prefer an accurate, surprising concept. Explain it conversationally in about 90 to 130 words. Do not use markdown headings.`
     : `Create one fascinating learning card for a curious university student. Focus on ${topic(selectedTopics()[Math.floor(Math.random()*selectedTopics().length)]).name}. Prefer an accurate, surprising concept. Explain it conversationally in about 90 to 130 words. Do not use markdown headings.`;
-  const response = await fetch(SCOTTS_TOT_URL + '/generate', {
-    method:'POST',
-    headers:{'Content-Type':'application/json'},
-    body:JSON.stringify({prompt,request,topics:selectedTopics(),difficulty:state.prefs.difficulty,novelty:state.prefs.novelty})
-  });
-  if(!response.ok) throw new Error('ScottsTot returned '+response.status);
-  const data = await response.json();
-  if(!data.ok || !data.text) throw new Error('No AI text returned');
-  return aiCardFromText(data.text, request);
+  const response=await fetch(SCOTTS_TOT_URL+'/generate?source=watermelons-card&ts='+Date.now(),{method:'POST',mode:'cors',cache:'no-store',headers:{'Content-Type':'application/json'},body:JSON.stringify({prompt})});
+  const data=await response.json();
+  if(!response.ok||!data.ok||!data.text)throw new Error('ScottsTot card request failed');
+  return aiCardFromText(data.text,request);
 }
 
-async function addAICard(request='', prepend=false){
+async function addAICard(request='',prepend=false){
   if(aiBusy)return;
   aiBusy=true;
   try{
-    const item = await fetchAI(request);
-    if(!item) throw new Error('Empty AI card');
+    const item=await fetchAI(request);
+    if(!item)throw new Error('Empty AI card');
     state.generated=[...state.generated,item].slice(-120);
     save('watermelons-generated',state.generated);
-    if(prepend){
-      feed.prepend(card(item));
-      feed.scrollTo({top:0,behavior:'smooth'});
-    }else{
-      feed.appendChild(card(item));
-      observeCards();
-    }
+    if(prepend){feed.prepend(card(item));feed.scrollTo({top:0,behavior:'smooth'})}
+    else{feed.appendChild(card(item));observeCards()}
     toast('🧠 ScottsTot grew a new idea');
     return item;
-  }catch(e){
-    toast('ScottsTot is taking a breath. Your local garden is still growing.');
-    return null;
-  }finally{
-    aiBusy=false;
-  }
+  }catch(e){toast('ScottsTot could not grow that card right now.')}
+  finally{aiBusy=false}
 }
 
 function aiSheet(){
-  showSheet(`
-    <div class="sheet-kicker">🧠 ScottsTot is listening</div>
-    <h2 id="sheetTitle">What are you curious about?</h2>
-    <p>Ask for a concept, a rabbit hole, a weird fact, or a connection between two ideas.</p>
-    <div class="ai-status"><span class="dot"></span> AI garden connection: online</div>
-    <div class="request-box" style="margin-top:14px">
-      <h3>Give it a direction</h3>
-      <div class="request"><input id="aiInput" placeholder="e.g. why people conform"><button id="aiRequestBtn">Grow</button></div>
-      <p style="font-size:11px;margin-bottom:0">Try “obscure Greek myths”, “Stoicism and anger”, or “why muscle grows”.</p>
-    </div>
-    <button class="cta" id="aiSurpriseBtn">🍉 Surprise me</button>
-  `);
+  showSheet(`<div class="sheet-kicker">🧠 ScottsTot</div><h2 id="sheetTitle">What are you curious about?</h2><p>Ask for a concept, a rabbit hole, a weird fact, or a connection between two ideas.</p><div class="ai-status"><span class="dot"></span> AI connection ready</div><div class="request-box" style="margin-top:14px"><h3>Give it a direction</h3><div class="request"><input id="aiInput" placeholder="e.g. why people conform"><button id="aiRequestBtn">Grow</button></div></div><button class="cta" id="aiSurpriseBtn">🍉 Surprise me</button>`);
   const input=document.getElementById('aiInput');
-  const run=async(q)=>{
-    q=(q||'').trim();
-    if(!q)return;
-    closeSheet();
-    toast('🧠 ScottsTot is growing your idea…');
-    await addAICard(q,true);
-  };
-  document.getElementById('aiRequestBtn').onclick=()=>run(input.value);
-  document.getElementById('aiSurpriseBtn').onclick=()=>{closeSheet();toast('🧠 ScottsTot is choosing…');addAICard('',true)};
-  input.addEventListener('keydown',e=>{if(e.key==='Enter')run(input.value)});
+  const run=async()=>{const q=input.value.trim();if(!q)return;closeSheet();toast('🧠 ScottsTot is growing your idea…');await addAICard(q,true)};
+  document.getElementById('aiRequestBtn').onclick=run;
+  document.getElementById('aiSurpriseBtn').onclick=()=>{closeSheet();addAICard('',true)};
+  input.onkeydown=e=>{if(e.key==='Enter')run()};
 }
 
-/* Robust AI button binding */
-window.WatermelonsAskAI = showAIPage;
-function bindAIButton(){
-  const btn = document.getElementById('aiBtn');
-  if(!btn) return;
-  btn.onclick = null;
-  btn.addEventListener('click', function wmAskAIHandler(e){
-    e.preventDefault();
-    e.stopPropagation();
-    window.WatermelonsAskAI();
-  }, {once:false});
-}
-if(document.readyState === 'loading'){
-  document.addEventListener('DOMContentLoaded', bindAIButton, {once:true});
-}else{
-  bindAIButton();
-}
-
-
-/* Replace the old local request behavior with a real AI request, while retaining local fallback. */
-const oldShowExplore = showExplore;
-showExplore = function(){
-  showSheet(`<div class="sheet-kicker">✦ Explore</div><h2 id="sheetTitle">Where should we wander?</h2><p>Pick a world or ask ScottsTot to grow something specific.</p>
-    <div class="topic-grid">${TOPICS.map(t=>`<button class="topic" data-explore-topic="${t.id}"><span>${t.icon}</span><strong>${t.name}</strong><small>${t.desc}</small></button>`).join('')}</div>
-    <div class="request-box"><h3>Ask ScottsTot</h3><p class="small">It can turn a question into a little learning card for your feed.</p>
-      <div class="request"><input id="topicInput" placeholder="What do you want to learn?"><button id="requestBtn">Grow</button></div>
-    </div>`);
-  document.querySelectorAll('[data-explore-topic]').forEach(b=>b.onclick=()=>{
-    const id=b.dataset.exploreTopic;
-    closeSheet();
-    state.prefs.topics=[id,...state.prefs.topics.filter(x=>x!==id)];
-    save('watermelons-prefs',state.prefs);
-    renderFeed(nextBatch(8));
-    addAICard('',false);
-  });
-  const request=async()=>{
-    const q=document.getElementById('topicInput').value.trim();
-    if(!q)return;
-    closeSheet();
-    toast('🧠 ScottsTot is growing your trail…');
-    await addAICard(q,true);
-  };
+/* Explore keeps its original local topic browser, but its generated-card request now uses the clean Worker path above. */
+const oldShowExplore=showExplore;
+showExplore=function(){
+  showSheet(`<div class="sheet-kicker">✦ Explore</div><h2 id="sheetTitle">Where should we wander?</h2><p>Pick a world or ask ScottsTot to grow something specific.</p><div class="topic-grid">${TOPICS.map(t=>`<button class="topic" data-explore-topic="${t.id}"><span>${t.icon}</span><strong>${t.name}</strong><small>${t.desc}</small></button>`).join('')}</div><div class="request-box"><h3>Ask ScottsTot</h3><p class="small">Turn a question into a little learning card for your feed.</p><div class="request"><input id="topicInput" placeholder="What do you want to learn?"><button id="requestBtn">Grow</button></div></div>`);
+  document.querySelectorAll('[data-explore-topic]').forEach(b=>b.onclick=()=>{const id=b.dataset.exploreTopic;closeSheet();state.prefs.topics=[id,...state.prefs.topics.filter(x=>x!==id)];save('watermelons-prefs',state.prefs);renderFeed(nextBatch(8));addAICard('',false)});
+  const request=async()=>{const q=document.getElementById('topicInput').value.trim();if(!q)return;closeSheet();await addAICard(q,true)};
   document.getElementById('requestBtn').onclick=request;
-  document.getElementById('topicInput').addEventListener('keydown',e=>{if(e.key==='Enter')request()});
+  document.getElementById('topicInput').onkeydown=e=>{if(e.key==='Enter')request()};
 };
 
-/* Final delegated fallback: even if another UI initializer touches the button,
-   the AI control remains functional. */
-document.addEventListener('click', function(e){
-  const btn = e.target.closest && e.target.closest('[data-action="ask-ai"]');
-  if(!btn) return;
-  if(e.defaultPrevented) return;
-  e.preventDefault();
-  if(typeof window.WatermelonsAskAI === 'function') window.WatermelonsAskAI();
-});
-
-/* Ask the AI for a fresh card after the first local batch, so the feed immediately proves the connection. */
-setTimeout(()=>{ if(state.onboarding) addAICard('',false); },900);
-
+/* One clean initialization path. No duplicate nav handlers, no AI bridge, no automatic network call on startup. */
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.getRegistrations().then(regs=>regs.forEach(r=>r.unregister())).catch(()=>{});
+}
+if(!state.onboarding)onboarding();else renderFeed(nextBatch(8));
 </script>
 </body>
 </html>
