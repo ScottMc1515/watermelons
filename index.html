@@ -885,6 +885,177 @@ body{
   .map-view{padding-bottom:100px}
 }
 
+
+/* WATERMELONS 7.0 • FINAL DOCK + REEL LAYOUT */
+.app-shell{overflow:hidden}
+.bottom-nav{
+  position:absolute !important;
+  left:8px !important;
+  right:8px !important;
+  bottom:8px !important;
+  width:auto !important;
+  height:68px !important;
+  box-sizing:border-box !important;
+  display:grid !important;
+  grid-template-columns:repeat(6,minmax(0,1fr)) !important;
+  gap:3px !important;
+  padding:4px !important;
+  margin:0 !important;
+  border-radius:23px !important;
+  z-index:40 !important;
+  overflow:hidden !important;
+}
+.bottom-nav .nav-btn,
+.bottom-nav .nav-btn.nav-map,
+.bottom-nav .nav-btn.nav-ai{
+  box-sizing:border-box !important;
+  width:100% !important;
+  min-width:0 !important;
+  max-width:none !important;
+  height:100% !important;
+  min-height:0 !important;
+  margin:0 !important;
+  padding:4px 1px !important;
+  display:flex !important;
+  flex:initial !important;
+  position:relative !important;
+  left:auto !important;
+  right:auto !important;
+  top:auto !important;
+  bottom:auto !important;
+  transform:none !important;
+  border-radius:17px !important;
+  justify-self:stretch !important;
+  align-self:stretch !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:3px !important;
+  overflow:hidden !important;
+}
+.bottom-nav .nav-btn i,
+.bottom-nav .nav-map i,
+.bottom-nav .nav-ai i{
+  width:auto !important;
+  height:auto !important;
+  min-width:0 !important;
+  min-height:0 !important;
+  margin:0 !important;
+  padding:0 !important;
+  font-size:18px !important;
+  line-height:1 !important;
+  background:none !important;
+  border:0 !important;
+  box-shadow:none !important;
+}
+.bottom-nav .nav-btn span{
+  display:block !important;
+  width:100% !important;
+  overflow:hidden !important;
+  text-overflow:ellipsis !important;
+  white-space:nowrap !important;
+  text-align:center !important;
+  font-size:7px !important;
+  line-height:1 !important;
+  margin:0 !important;
+}
+.bottom-nav .nav-btn.active:after{bottom:3px !important}
+.bottom-nav .nav-map.active,
+.bottom-nav .nav-ai.active{height:100% !important;margin:0 !important}
+.feed{
+  height:calc(100dvh - 82px - 72px) !important;
+  padding-bottom:0 !important;
+}
+.feed .card{
+  min-height:100% !important;
+  box-sizing:border-box !important;
+  padding:26px 20px 118px !important;
+}
+.feed .card .content{
+  width:100%;
+  position:relative;
+  z-index:4;
+}
+.feed .card .actions,
+.feed .card .sub-actions{
+  position:relative;
+  z-index:8;
+}
+.feed .card .actions button,
+.feed .card .sub-actions button{
+  pointer-events:auto !important;
+  position:relative;
+  z-index:9;
+}
+.map-view{padding-bottom:92px !important}
+.ai-page{padding-bottom:92px !important}
+
+@media(max-width:430px){
+  .bottom-nav{
+    left:5px !important;right:5px !important;bottom:5px !important;
+    height:66px !important;
+    grid-template-columns:repeat(6,minmax(0,1fr)) !important;
+  }
+  .bottom-nav .nav-btn{border-radius:16px !important}
+  .bottom-nav .nav-btn i{font-size:17px !important}
+  .bottom-nav .nav-btn span{font-size:6.5px !important}
+  .feed .card{padding:23px 15px 116px !important}
+}
+
+/* Topic-specific reel scenes. These are self-contained and do not rely on external image files. */
+.card::before{
+  background-image:var(--wm-scene) !important;
+  background-size:cover !important;
+  background-position:center !important;
+  filter:saturate(1.04) !important;
+}
+.card[data-theme="psychology"]{--wm-scene:
+  radial-gradient(circle at 20% 18%,rgba(255,231,180,.92) 0 7%,transparent 22%),
+  radial-gradient(ellipse at 70% 24%,rgba(176,207,182,.78),transparent 29%),
+  linear-gradient(140deg,#68866d 0%,#a9bf9b 45%,#536d5c 100%) !important;}
+.card[data-theme="philosophy"]{--wm-scene:
+  radial-gradient(circle at 24% 18%,rgba(245,237,199,.88) 0 6%,transparent 22%),
+  radial-gradient(ellipse at 75% 70%,rgba(119,151,112,.62),transparent 32%),
+  linear-gradient(145deg,#526e58 0%,#91aa80 47%,#3f5c48 100%) !important;}
+.card[data-theme="mythology"]{--wm-scene:
+  radial-gradient(circle at 72% 15%,rgba(255,217,155,.92) 0 6%,transparent 23%),
+  linear-gradient(90deg,rgba(91,67,45,.55),transparent 42%),
+  linear-gradient(145deg,#675544 0%,#b08b61 45%,#4c4d48 100%) !important;}
+.card[data-theme="faith"]{--wm-scene:
+  radial-gradient(circle at 72% 17%,rgba(255,225,159,.96) 0 7%,transparent 24%),
+  radial-gradient(ellipse at 18% 72%,rgba(151,181,135,.65),transparent 32%),
+  linear-gradient(150deg,#66816d 0%,#b8c79d 50%,#657661 100%) !important;}
+.card[data-theme="fitness"]{--wm-scene:
+  radial-gradient(circle at 78% 18%,rgba(255,171,112,.7) 0 6%,transparent 22%),
+  radial-gradient(ellipse at 25% 75%,rgba(95,126,110,.55),transparent 28%),
+  linear-gradient(145deg,#354b4a 0%,#657b6d 46%,#293a39 100%) !important;}
+.card[data-theme="history"]{--wm-scene:
+  radial-gradient(ellipse at 22% 18%,rgba(246,218,159,.9) 0 6%,transparent 23%),
+  radial-gradient(ellipse at 78% 70%,rgba(126,121,88,.46),transparent 30%),
+  linear-gradient(145deg,#655441 0%,#a99069 47%,#4d5545 100%) !important;}
+.card[data-theme="science"]{--wm-scene:
+  radial-gradient(circle at 72% 20%,rgba(174,230,249,.95) 0 5%,transparent 20%),
+  radial-gradient(circle at 25% 65%,rgba(134,184,217,.55),transparent 28%),
+  linear-gradient(145deg,#344f68 0%,#6d9baa 48%,#293b55 100%) !important;}
+.card[data-theme="literature"]{--wm-scene:
+  radial-gradient(circle at 27% 18%,rgba(255,219,157,.9) 0 6%,transparent 22%),
+  radial-gradient(ellipse at 75% 68%,rgba(126,125,89,.5),transparent 29%),
+  linear-gradient(145deg,#50584a 0%,#9c9069 48%,#3f403e 100%) !important;}
+
+/* Add a subtle "world" label to make the scenes feel intentional. */
+.card[data-theme="psychology"] .card-top::after{content:"MIND GARDEN";color:rgba(255,255,255,.62)}
+.card[data-theme="philosophy"] .card-top::after{content:"THE GROVE";color:rgba(255,255,255,.62)}
+.card[data-theme="mythology"] .card-top::after{content:"ANCIENT WORLD";color:rgba(255,255,255,.65)}
+.card[data-theme="faith"] .card-top::after{content:"PILGRIM'S ROAD";color:rgba(255,255,255,.62)}
+.card[data-theme="fitness"] .card-top::after{content:"IRON COAST";color:rgba(255,255,255,.62)}
+.card[data-theme="history"] .card-top::after{content:"OLD WORLD";color:rgba(255,255,255,.62)}
+.card[data-theme="science"] .card-top::after{content:"STARFALL";color:rgba(255,255,255,.65)}
+.card[data-theme="literature"] .card-top::after{content:"GREAT LIBRARY";color:rgba(255,255,255,.62)}
+.card .card-top{position:relative}
+.card .card-top::after{
+  position:absolute;right:0;top:50%;transform:translateY(-50%);
+  font:800 7px/1 ui-monospace,monospace;letter-spacing:.1em;
+}
+
 </style>
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -1107,7 +1278,14 @@ function settingsSheet(){
  document.getElementById('resetBtn').onclick=()=>{if(confirm('Reset saved items, progress, and preferences on this device?')){localStorage.clear();location.reload();}};
 }
 
-document.querySelectorAll('.nav-btn').forEach(btn=>btn.onclick=()=>{document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');state.tab=btn.dataset.tab;renderTab()});
+document.querySelectorAll('.nav-btn').forEach(btn=>btn.onclick=()=>{
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  state.tab=btn.dataset.tab;
+  if(state.tab==='map') showMap();
+  else if(state.tab==='ai') showAIPage();
+  else renderTab();
+});
 function renderTab(){
  if(state.tab==='feed'){renderFeed(nextBatch(8));return}
  if(state.tab==='saved'){const items=uniqueItems([...BANK,...state.generated]).filter(x=>state.saved.includes(x.id));renderFeed(items.length?items:[{id:'empty',theme:'literature',tag:'Saved Garden',title:'Your saved ideas will live here',dek:'When something makes you stop scrolling, save it.',body:'Try the ☆ Save button on any card. Your collection stays on this device.',type:'text'}]);return}
@@ -1398,6 +1576,8 @@ async function askScotts(question){
   const box=document.getElementById('aiChat');
   const input=document.getElementById('aiPageInput');
   aiBusy=true;
+  const sendBtn=document.getElementById('aiPageSend');
+  if(sendBtn){sendBtn.disabled=true;sendBtn.textContent='…';}
   aiChat.push({role:'user',text:question});
   renderAIChat();
   if(input)input.value='';
@@ -1414,7 +1594,7 @@ If the user asks for an explanation, teach rather than merely define. Avoid pret
 Conversation so far:
 ${recent}
 Respond to the user's latest message.`;
-    const response=await fetch(SCOTTS_TOT_URL+'/generate',{
+    const response=await fetch(SCOTTS_TOT_URL+'/generate?wm='+Date.now(),{
       method:'POST',
       headers:{'Content-Type':'application/json'},
       body:JSON.stringify({prompt})
@@ -1429,6 +1609,8 @@ Respond to the user's latest message.`;
     aiChat.push({role:'bot',text:'I hit a little snag reaching ScottsTot. Try that question again in a moment.'});
   }finally{
     aiBusy=false;
+    const sendBtn=document.getElementById('aiPageSend');
+    if(sendBtn){sendBtn.disabled=false;sendBtn.textContent='➤';}
     renderAIChat();
   }
 }
@@ -1451,7 +1633,8 @@ document.querySelectorAll('.nav-btn').forEach(btn=>{
 });
 
 /* Top ScottsTot button simply switches to the same AI page. */
-document.getElementById('aiBtn')?.addEventListener('click',()=>{
+document.getElementById('aiBtn')?.addEventListener('click',(e)=>{
+  e.preventDefault();
   state.tab='ai';
   document.querySelectorAll('.nav-btn').forEach(x=>x.classList.toggle('active',x.dataset.tab==='ai'));
   showAIPage();
