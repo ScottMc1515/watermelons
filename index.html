@@ -118,6 +118,30 @@ body{background:#071116}
   .pin-science{right:3%;top:78%}.pin-lit{left:35%;top:8%}
 }
 
+/* V3 COMMAND-DECK UI */
+.topbar{height:88px;padding:11px 12px 9px 16px;align-items:center}
+.brand-wrap h1{font-size:24px}.live-dot{font:700 9px ui-monospace,monospace;color:#79e8ff;vertical-align:middle;text-shadow:0 0 10px #79e8ff;animation:liveBlink 1.5s infinite}
+.top-actions{display:flex;gap:5px;align-items:center}
+.top-tool{height:46px;min-width:52px;padding:6px 7px;border-radius:13px;border:1px solid rgba(121,232,255,.15);background:linear-gradient(180deg,rgba(121,232,255,.09),rgba(121,232,255,.025));color:#bcefeb;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2px;font:800 7px/1 ui-monospace,monospace;letter-spacing:.08em;cursor:pointer;box-shadow:inset 0 0 18px rgba(121,232,255,.035),0 4px 18px rgba(0,0,0,.16);transition:.18s ease}
+.top-tool .tool-icon{font:700 16px/1 system-ui}.top-tool:active{transform:scale(.94);border-color:rgba(121,232,255,.5);background:rgba(121,232,255,.14)}.top-tool.sound-active{border-color:rgba(121,232,255,.55);box-shadow:0 0 18px rgba(121,232,255,.16),inset 0 0 18px rgba(121,232,255,.07)}
+.bottom-nav{height:82px;grid-template-columns:repeat(5,1fr);padding:7px 7px 9px;gap:4px;border-top:1px solid rgba(121,232,255,.17);background:rgba(4,12,17,.94);box-shadow:0 -18px 50px rgba(0,0,0,.38);overflow:visible}
+.nav-btn{position:relative;border:1px solid transparent;border-radius:15px;color:#66817f;font:800 8px/1 ui-monospace,monospace;letter-spacing:.08em;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;transition:.2s ease}
+.nav-btn i{font-style:normal;font:700 21px/1 system-ui;color:#7b9b98;transition:.2s ease}.nav-btn span{font-size:8px;margin:0}.nav-btn:active{transform:scale(.93)}
+.nav-btn.active{color:#bdf8f3;background:linear-gradient(180deg,rgba(121,232,255,.13),rgba(121,232,255,.035));border-color:rgba(121,232,255,.18);box-shadow:inset 0 0 20px rgba(121,232,255,.05),0 0 20px rgba(121,232,255,.06);text-shadow:0 0 12px rgba(121,232,255,.55)}
+.nav-btn.active i{color:#79e8ff;text-shadow:0 0 18px rgba(121,232,255,.8)}.nav-btn.active:after{content:"";position:absolute;bottom:-1px;left:50%;width:22px;height:2px;transform:translateX(-50%);background:#79e8ff;border-radius:9px;box-shadow:0 0 13px #79e8ff}
+.nav-map{margin-top:-9px;height:84px;background:radial-gradient(circle at 50% 20%,rgba(121,232,255,.13),rgba(7,16,21,.96) 62%);border-color:rgba(121,232,255,.16);box-shadow:0 -4px 22px rgba(121,232,255,.06),inset 0 0 24px rgba(121,232,255,.04)}
+.nav-map i{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(121,232,255,.2);background:rgba(121,232,255,.06)}
+@keyframes liveBlink{50%{opacity:.35}}
+/* Map spacing: a deliberate 2-column command layout */
+.map-paper{min-height:860px}
+.world-pin{min-width:138px;min-height:76px;padding:11px 12px}
+.pin-psych{left:5%;top:20%}.pin-phil{left:39%;top:31%}.pin-myth{right:5%;top:17%}.pin-faith{right:7%;top:43%}.pin-fit{left:4%;top:55%}.pin-history{left:38%;top:65%}.pin-science{right:5%;top:74%}.pin-lit{left:5%;top:39%}
+.map-paper .route.r1{left:18%;top:29%;width:45%;transform:rotate(6deg)}.map-paper .route.r2{left:48%;top:47%;width:36%;transform:rotate(18deg)}.map-paper .route.r3{left:20%;top:63%;width:55%;transform:rotate(-7deg)}
+.map-legend{padding-bottom:6px}.map-chip{cursor:pointer;transition:.15s}.map-chip:hover{border-color:rgba(121,232,255,.45);transform:translateY(-1px)}
+/* Make the map pins feel like active nodes */
+.world-pin:after{content:"";position:absolute;width:5px;height:5px;border-radius:50%;right:9px;top:9px;background:#79e8ff;box-shadow:0 0 10px #79e8ff;opacity:.8}
+@media(max-width:430px){.topbar{padding-left:13px}.brand-wrap h1{font-size:21px}.top-tool{min-width:45px;height:44px;padding:5px}.top-tool .tool-icon{font-size:15px}.map-paper{min-height:920px}.world-pin{min-width:132px;min-height:78px}.pin-psych{left:3%;top:18%}.pin-phil{left:35%;top:30%}.pin-myth{right:3%;top:16%}.pin-faith{right:3%;top:44%}.pin-fit{left:3%;top:56%}.pin-history{left:34%;top:66%}.pin-science{right:3%;top:77%}.pin-lit{left:34%;top:40%}}
+
 </style>
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -128,10 +152,14 @@ body{background:#071116}
 <div class="app-shell">
   <header class="topbar">
     <div class="brand-wrap">
-      <div class="eyebrow">LEARN, THEN WANDER</div>
-      <h1>Watermelons</h1>
+      <div class="eyebrow">WATERMELONS // KNOWLEDGE SYSTEM</div>
+      <h1>Watermelons <span class="live-dot">●</span></h1>
     </div>
-    <div class="top-actions"><button id="soundBtn" class="icon-btn" aria-label="Toggle soundscape">🔇</button><button id="themeBtn" class="icon-btn" aria-label="Change theme">🎭</button><button id="settingsBtn" class="icon-btn" aria-label="Settings">⚙︎</button></div>
+    <div class="top-actions">
+      <button id="soundBtn" class="top-tool" aria-label="Toggle soundscape"><span class="tool-icon">🔊</span><span>SOUND</span></button>
+      <button id="themeBtn" class="top-tool" aria-label="Change theme"><span class="tool-icon">◈</span><span>WORLD</span></button>
+      <button id="settingsBtn" class="top-tool" aria-label="Settings"><span class="tool-icon">⚙</span><span>SETUP</span></button>
+    </div>
   </header>
   <div class="quest-strip">
     <div class="quest-copy"><span id="questIcon">🧭</span><div><b id="questTitle">Daily Quest</b><small id="questText">Discover 3 new ideas</small></div></div>
@@ -141,10 +169,12 @@ body{background:#071116}
   <main id="feed" class="feed" aria-live="polite"></main>
 
   <nav class="bottom-nav" aria-label="Main navigation">
-    <button class="nav-btn active" data-tab="feed">⌂<span>For You</span></button>
-    <button class="nav-btn" data-tab="explore">✦<span>Explore</span></button>
-    <button class="nav-btn" data-tab="map">🗺️<span>Map</span></button><button class="nav-btn" data-tab="saved">♡<span>Saved</span></button>
-    <button class="nav-btn" data-tab="journey">◌<span>Journey</span></button>
+    <div class="nav-glow"></div>
+    <button class="nav-btn active" data-tab="feed"><i>⌂</i><span>FOR YOU</span></button>
+    <button class="nav-btn" data-tab="explore"><i>✦</i><span>EXPLORE</span></button>
+    <button class="nav-btn nav-map" data-tab="map"><i>◉</i><span>MAP</span></button>
+    <button class="nav-btn" data-tab="saved"><i>♡</i><span>SAVED</span></button>
+    <button class="nav-btn" data-tab="journey"><i>◌</i><span>JOURNEY</span></button>
   </nav>
 </div>
 
@@ -502,64 +532,80 @@ function showMap(){
   document.getElementById('mapWander').onclick=()=>{state.tab='feed';document.querySelectorAll('.nav-btn').forEach(x=>x.classList.toggle('active',x.dataset.tab==='feed'));state.prefs.novelty=100;save('watermelons-prefs',state.prefs);renderFeed(nextBatch(10));toast('🎲 The map chose your next adventure');};
 }
 
-/* PROCEDURAL LO-FI SOUNDSCAPE 2.0
-   Generates a tiny evolving music bed locally. No external recordings or copyrighted files. */
-let wmAudio=null,wmMaster=null,wmPlaying=false,wmLoop=null,wmStep=0,wmThemeTimer=null;
+/* PROCEDURAL LO-FI SOUNDSCAPE 3.0
+   Local synth soundtrack. It starts only after a user tap and stays entirely in-browser. */
+let wmAudio=null,wmMaster=null,wmPlaying=false,wmLoop=null,wmStep=0;
 const WM_MUSIC={
- meadow:{bpm:74,root:196,scale:[0,2,4,7,9],chords:[[0,4,7],[2,5,9],[4,7,11],[0,3,7]],wave:'triangle'},
- ancient:{bpm:66,root:174,scale:[0,2,3,7,9],chords:[[0,3,7],[2,5,9],[3,7,10],[0,4,7]],wave:'sine'},
- pirate:{bpm:78,root:146,scale:[0,2,3,5,7,10],chords:[[0,3,7],[5,8,10],[3,7,10],[0,5,7]],wave:'triangle'},
- night:{bpm:62,root:110,scale:[0,3,5,7,10],chords:[[0,3,7],[5,8,10],[3,7,10],[0,5,7]],wave:'sine'},
- sunrise:{bpm:76,root:220,scale:[0,2,4,5,7,9,11],chords:[[0,4,7],[2,5,9],[4,7,11],[0,4,9]],wave:'triangle'}
+ meadow:{bpm:76,root:196,scale:[0,2,4,7,9],chords:[[0,4,7],[2,5,9],[4,7,11],[0,3,7]],wave:'triangle'},
+ ancient:{bpm:68,root:174,scale:[0,2,3,7,9],chords:[[0,3,7],[2,5,9],[3,7,10],[0,4,7]],wave:'sine'},
+ pirate:{bpm:82,root:146,scale:[0,2,3,5,7,10],chords:[[0,3,7],[5,8,10],[3,7,10],[0,5,7]],wave:'triangle'},
+ night:{bpm:64,root:110,scale:[0,3,5,7,10],chords:[[0,3,7],[5,8,10],[3,7,10],[0,5,7]],wave:'sine'},
+ sunrise:{bpm:78,root:220,scale:[0,2,4,5,7,9,11],chords:[[0,4,7],[2,5,9],[4,7,11],[0,4,9]],wave:'triangle'}
 };
-function wmTone(freq,dur,when,type='sine',vol=.025,attack=.03){
- if(!wmAudio||!wmMaster)return; const o=wmAudio.createOscillator(),g=wmAudio.createGain();o.type=type;o.frequency.value=freq;
- g.gain.setValueAtTime(.0001,when);g.gain.exponentialRampToValueAtTime(vol,when+attack);g.gain.exponentialRampToValueAtTime(.0001,when+dur);o.connect(g);g.connect(wmMaster);o.start(when);o.stop(when+dur+.02);
+function wmTone(freq,dur,when,type='sine',vol=.035,attack=.025){
+  if(!wmAudio||!wmMaster)return;
+  const o=wmAudio.createOscillator(),g=wmAudio.createGain();
+  o.type=type;o.frequency.setValueAtTime(freq,when);
+  g.gain.setValueAtTime(.0001,when);g.gain.exponentialRampToValueAtTime(vol,when+attack);g.gain.exponentialRampToValueAtTime(.0001,when+dur);
+  o.connect(g);g.connect(wmMaster);o.start(when);o.stop(when+dur+.04);
 }
-function wmKick(when){if(!wmAudio)return;wmTone(72,.11,when,'sine',.018,.005);wmTone(42,.18,when+.015,'sine',.012,.005)}
+function wmKick(when){wmTone(74,.08,when,'sine',.055,.004);wmTone(43,.16,when+.012,'sine',.035,.004)}
+function wmHat(when){wmTone(4200,.035,when,'square',.009,.003)}
 function wmMusicBar(){
- if(!wmAudio||!wmPlaying)return; const m=WM_MUSIC[wmTheme]||WM_MUSIC.meadow, beat=60/m.bpm, now=wmAudio.currentTime+.03, chord=m.chords[wmStep%m.chords.length];
- chord.forEach((n,i)=>wmTone(m.root*Math.pow(2,n/12),beat*3.6,now+i*.025,m.wave,.018,.12));
- wmTone(m.root/2,beat*3.5,now,'sine',.022,.08);
- for(let i=0;i<4;i++) if((wmStep+i)%4===0) wmKick(now+i*beat);
- const melodyNotes=wmStep%2?[m.scale[1],m.scale[3],m.scale[4]]:[m.scale[0],m.scale[2],m.scale[3],m.scale[1]];
- melodyNotes.forEach((n,i)=>{const t=now+(i+.4)*beat*.72;wmTone(m.root*2*Math.pow(2,n/12),beat*.48,t,'sine',.008,.06)});
- wmStep++; wmLoop=setTimeout(wmMusicBar,beat*4000);
+  if(!wmAudio||!wmPlaying)return;
+  const m=WM_MUSIC[wmTheme]||WM_MUSIC.meadow, beat=60/m.bpm, now=wmAudio.currentTime+.05, chord=m.chords[wmStep%m.chords.length];
+  chord.forEach((n,i)=>wmTone(m.root*Math.pow(2,n/12),beat*3.7,now+i*.018,m.wave,.028,.09));
+  wmTone(m.root/2,beat*3.6,now,'sine',.045,.07);
+  for(let i=0;i<4;i++){
+    if(i===0||i===2)wmKick(now+i*beat);
+    if(i>0)wmHat(now+i*beat);
+  }
+  const melody=m.scale[(wmStep*2)%m.scale.length];
+  wmTone(m.root*2*Math.pow(2,melody/12),beat*.55,now+beat*.55,'sine',.015,.04);
+  if(wmStep%2===1)wmTone(m.root*2*Math.pow(2,m.scale[(wmStep+3)%m.scale.length]/12),beat*.4,now+beat*2.45,'sine',.012,.03);
+  wmStep++;
+  wmLoop=setTimeout(wmMusicBar,beat*4000);
 }
 async function wmStartSound(){
- if(wmPlaying)return;
- try{
-   wmAudio=new(window.AudioContext||window.webkitAudioContext)();
-   if(wmAudio.state==='suspended') await wmAudio.resume();
-   wmMaster=wmAudio.createGain();
-   wmMaster.gain.setValueAtTime(.0001,wmAudio.currentTime);
-   wmMaster.gain.exponentialRampToValueAtTime(.18,wmAudio.currentTime+.35);
-   wmMaster.connect(wmAudio.destination);
-   wmPlaying=true;wmStep=0;
-   document.getElementById('soundBtn').textContent='🔊';
-   document.getElementById('soundBtn').classList.add('sound-on','sound-pulse');
-   wmMusicBar();
- }catch(e){
-   wmAudio=null;wmMaster=null;wmPlaying=false;
-   toast('Your browser blocked the soundscape. Tap the sound button once more to wake it up.');
- }
+  if(wmPlaying)return;
+  try{
+    const Ctx=window.AudioContext||window.webkitAudioContext;
+    if(!Ctx)throw new Error('No Web Audio');
+    wmAudio=new Ctx();
+    await wmAudio.resume();
+    wmMaster=wmAudio.createGain();
+    wmMaster.gain.setValueAtTime(.0001,wmAudio.currentTime);
+    wmMaster.gain.linearRampToValueAtTime(.72,wmAudio.currentTime+.45);
+    wmMaster.connect(wmAudio.destination);
+    // Immediate audible confirmation, then the loop takes over.
+    const now=wmAudio.currentTime+.03;
+    wmTone(392,.18,now,'triangle',.09,.015);wmTone(494,.28,now+.12,'sine',.07,.02);
+    wmPlaying=true;wmStep=Math.floor(Math.random()*4);
+    const btn=document.getElementById('soundBtn');btn.classList.add('sound-active','sound-on');btn.querySelector('.tool-icon').textContent='♫';
+    wmMusicBar();
+  }catch(e){
+    wmPlaying=false;wmAudio=null;wmMaster=null;
+    toast('Sound could not start. Make sure your phone is not muted, then tap SOUND again.');
+  }
 }
-function wmStopSound(){if(!wmPlaying)return;wmPlaying=false;clearTimeout(wmLoop);wmLoop=null;try{wmMaster?.gain.exponentialRampToValueAtTime(.0001,wmAudio.currentTime+.25);setTimeout(()=>wmAudio?.close(),350)}catch{}wmAudio=null;wmMaster=null;document.getElementById('soundBtn').textContent='🔇';document.getElementById('soundBtn').classList.remove('sound-on','sound-pulse')}
-document.getElementById('soundBtn').onclick=async()=>wmPlaying?wmStopSound():await wmStartSound();
-const wmOldApplyTheme=wmApplyTheme;wmApplyTheme=function(k){wmOldApplyTheme(k);if(wmPlaying){wmStopSound();setTimeout(wmStartSound,120)}};
+function wmStopSound(){
+  if(!wmAudio)return;wmPlaying=false;clearTimeout(wmLoop);wmLoop=null;
+  try{wmMaster?.gain.exponentialRampToValueAtTime(.0001,wmAudio.currentTime+.18);setTimeout(()=>{try{wmAudio?.close()}catch{}},260)}catch{}
+  wmAudio=null;wmMaster=null;
+  const btn=document.getElementById('soundBtn');btn.classList.remove('sound-active','sound-on');btn.querySelector('.tool-icon').textContent='🔊';
+}
+document.getElementById('soundBtn').onclick=async()=>{if(wmPlaying)wmStopSound();else await wmStartSound();};
 document.addEventListener('visibilitychange',async()=>{if(!document.hidden&&wmPlaying&&wmAudio?.state==='suspended'){try{await wmAudio.resume();}catch{}}});
+const wmOldApplyTheme=wmApplyTheme;wmApplyTheme=function(k){wmOldApplyTheme(k);if(wmPlaying){wmStopSound();setTimeout(()=>wmStartSound(),180)}};
 
-/* Make the existing nav actually switch to the new map view. */
+/* COMMAND-DECK NAVIGATION */
 document.querySelectorAll('.nav-btn').forEach(btn=>{
-  btn.addEventListener('click',()=>{
+  btn.onclick=()=>{
     state.tab=btn.dataset.tab;
     document.querySelectorAll('.nav-btn').forEach(x=>x.classList.toggle('active',x===btn));
     if(state.tab==='map') showMap();
-    else if(state.tab==='feed') renderFeed(nextBatch(8));
-    else if(state.tab==='explore') { if(typeof exploreSheet==='function') exploreSheet(); }
-    else if(state.tab==='saved') { if(typeof savedSheet==='function') savedSheet(); }
-    else if(state.tab==='journey') { if(typeof journeySheet==='function') journeySheet(); }
-  });
+    else if(typeof renderTab==='function') renderTab();
+  };
 });
 
 if('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(()=>{});
