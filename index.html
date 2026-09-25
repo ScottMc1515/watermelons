@@ -142,6 +142,367 @@ body{background:#071116}
 .world-pin:after{content:"";position:absolute;width:5px;height:5px;border-radius:50%;right:9px;top:9px;background:#79e8ff;box-shadow:0 0 10px #79e8ff;opacity:.8}
 @media(max-width:430px){.topbar{padding-left:13px}.brand-wrap h1{font-size:21px}.top-tool{min-width:45px;height:44px;padding:5px}.top-tool .tool-icon{font-size:15px}.map-paper{min-height:920px}.world-pin{min-width:132px;min-height:78px}.pin-psych{left:3%;top:18%}.pin-phil{left:35%;top:30%}.pin-myth{right:3%;top:16%}.pin-faith{right:3%;top:44%}.pin-fit{left:3%;top:56%}.pin-history{left:34%;top:66%}.pin-science{right:3%;top:77%}.pin-lit{left:34%;top:40%}}
 
+
+/* WATERMELONS 4.0 • BUBBLY GARDEN UI */
+:root{
+  --garden:#f5f1df;
+  --melon:#ff6f61;
+  --leaf:#6f9d6b;
+  --mint:#dff2df;
+  --sky:#dff1f5;
+  --lav:#ebe2f7;
+  --sun:#fff0c9;
+  --ink2:#25342d;
+  --soft-line:rgba(47,68,54,.11);
+  --bubble-shadow:0 14px 38px rgba(54,67,53,.13);
+}
+body{
+  background:
+    radial-gradient(circle at 12% 10%,rgba(255,209,154,.55),transparent 23%),
+    radial-gradient(circle at 92% 18%,rgba(190,224,239,.65),transparent 25%),
+    linear-gradient(145deg,#dfead7,#f4eedb 48%,#dfeaf0);
+}
+.app-shell{
+  background:
+    radial-gradient(circle at 15% 15%,rgba(255,255,255,.9),transparent 28%),
+    linear-gradient(180deg,#fbfaf1,#f2f0df);
+  color:var(--ink2);
+}
+.topbar{
+  height:92px;
+  padding:13px 13px 10px 18px;
+  background:rgba(255,253,244,.9);
+  border-bottom:1px solid var(--soft-line);
+  box-shadow:0 5px 24px rgba(57,73,57,.08);
+}
+.brand-wrap{min-width:0}
+.eyebrow{
+  color:#70936b;
+  font-size:8px;
+  letter-spacing:.15em;
+}
+.brand-wrap h1{
+  color:#263b30;
+  font-size:25px;
+  letter-spacing:-.035em;
+  margin:1px 0 0;
+}
+.brand-sub{
+  font-size:9px;
+  color:#879487;
+  margin-top:1px;
+  letter-spacing:.03em;
+}
+.live-dot{
+  color:#74a96d;
+  text-shadow:0 0 9px rgba(116,169,109,.6);
+}
+.top-actions{gap:6px}
+.top-tool{
+  height:48px;
+  min-width:50px;
+  padding:5px 8px;
+  border-radius:17px;
+  border:1px solid rgba(73,101,76,.12);
+  background:rgba(255,255,255,.82);
+  color:#47624c;
+  box-shadow:0 6px 18px rgba(49,70,52,.08),inset 0 0 0 1px rgba(255,255,255,.65);
+  font:800 7px/1 ui-monospace,monospace;
+  transition:transform .16s ease,box-shadow .16s ease;
+}
+.top-tool .tool-icon{font-size:17px}
+.top-tool:hover{transform:translateY(-2px);box-shadow:0 9px 22px rgba(49,70,52,.12)}
+.top-tool:active{transform:scale(.94)}
+.ai-tool{
+  background:linear-gradient(145deg,#fff3cf,#ffe5e3);
+  border-color:rgba(255,111,97,.16);
+  color:#76524c;
+}
+.quest-strip{
+  height:56px;
+  padding:7px 13px 7px 15px;
+  background:rgba(255,253,244,.84);
+  border-bottom:1px solid var(--soft-line);
+}
+.quest-copy>span{
+  width:34px;height:34px;display:grid;place-items:center;
+  border-radius:12px;background:#e5f2df;
+  box-shadow:inset 0 0 0 1px rgba(111,157,107,.08);
+}
+.quest-copy b{font-size:11px;color:#33483a}
+.quest-copy small{font-size:10px;color:#879487}
+.quest-actions{display:flex;align-items:center;gap:6px}
+.quest-bubble{
+  border:0;width:34px;height:34px;border-radius:12px;
+  background:#eee5f8;color:#66527b;cursor:pointer;font-size:17px;
+  box-shadow:0 5px 14px rgba(93,72,119,.10);
+}
+.xp-pill{
+  background:#fff2bd;
+  border:1px solid rgba(160,125,38,.14);
+  color:#80672a;
+  padding:8px 11px;
+}
+.feed{
+  height:calc(100dvh - 92px - 56px - 82px);
+  padding:12px 10px 18px;
+  background:
+    radial-gradient(circle at 10% 10%,rgba(255,255,255,.9),transparent 20%),
+    linear-gradient(180deg,#eef3e5,#f6f1df);
+}
+.card{
+  min-height:calc(100% - 6px);
+  margin:0 2px 8px;
+  border-radius:30px;
+  padding:24px 17px 22px;
+  box-shadow:var(--bubble-shadow);
+  border:1px solid rgba(255,255,255,.48);
+  background:#aac1a6;
+  overflow:hidden;
+}
+.card:after{
+  background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(28,43,31,.03) 35%,rgba(21,35,27,.76) 100%);
+}
+.card .content{
+  max-width:470px;
+}
+.card-top .pill{
+  border:1px solid rgba(255,255,255,.32);
+  background:rgba(36,49,39,.48);
+  border-radius:999px;
+  padding:7px 10px;
+}
+.card h2{
+  font-size:clamp(30px,7.5vw,44px);
+  line-height:.99;
+  margin:12px 0 8px;
+}
+.card .dek{
+  font-size:15px;
+  line-height:1.43;
+  max-width:430px;
+}
+.paper{
+  border-radius:25px;
+  padding:17px 17px;
+  background:rgba(255,253,245,.95);
+  border:1px solid rgba(255,255,255,.82);
+  box-shadow:0 12px 34px rgba(25,40,28,.13);
+}
+.paper p{font-size:14px;line-height:1.52}
+.actions{
+  gap:7px;
+  margin-top:11px;
+}
+.actions button,.sub-actions button{
+  border-radius:15px;
+  padding:10px 12px;
+  background:rgba(35,50,39,.52);
+  border-color:rgba(255,255,255,.22);
+}
+.sub-actions button{
+  border-color:rgba(255,255,255,.16);
+}
+.bottom-nav{
+  height:82px;
+  left:10px;right:10px;bottom:9px;
+  border:1px solid rgba(75,96,77,.12);
+  border-radius:25px;
+  padding:6px;
+  gap:5px;
+  background:rgba(255,253,246,.92);
+  box-shadow:0 14px 38px rgba(46,61,48,.15);
+  backdrop-filter:blur(18px);
+}
+.nav-btn{
+  border-radius:18px;
+  color:#849184;
+  font:800 8px/1 ui-monospace,monospace;
+  letter-spacing:.04em;
+}
+.nav-btn i{color:#819181;font-size:20px}
+.nav-btn.active{
+  color:#416047;
+  background:#e7f1e1;
+  border-color:rgba(111,157,107,.13);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.7);
+  text-shadow:none;
+}
+.nav-btn.active i{color:#56845a;text-shadow:none}
+.nav-btn.active:after{
+  background:#72a86c;
+  box-shadow:0 0 10px rgba(114,168,108,.55);
+  bottom:3px;
+}
+.nav-map{
+  margin-top:-17px;
+  height:88px;
+  border-radius:22px;
+  background:linear-gradient(145deg,#e6f2df,#dceef0);
+  border:1px solid rgba(91,131,95,.16);
+  box-shadow:0 10px 24px rgba(75,108,80,.16);
+}
+.nav-map i{
+  width:48px;height:48px;
+  border:0;
+  background:#fff9df;
+  box-shadow:0 6px 18px rgba(87,92,61,.14);
+  font-size:23px;
+}
+.nav-map.active{
+  background:linear-gradient(145deg,#dcefd7,#d7edf0);
+}
+.sheet-backdrop{background:rgba(38,50,40,.24);backdrop-filter:blur(7px)}
+.sheet-card{
+  background:linear-gradient(180deg,#fffdf5,#f4f0df);
+  border-radius:32px 32px 0 0;
+  box-shadow:0 -18px 60px rgba(38,53,41,.18);
+  border:1px solid rgba(255,255,255,.8);
+}
+.close-btn{
+  background:#edf2e7;
+  color:#5c715e;
+}
+.sheet-card h2{color:#2f4434}
+.topic{
+  background:#f6f1e3;
+  border-color:var(--soft-line);
+  border-radius:20px;
+  transition:transform .14s ease,background .14s ease;
+}
+.topic:hover{transform:translateY(-2px)}
+.topic.selected{background:#e4f0de;border-color:#9bb897;box-shadow:inset 0 0 0 1px #8bad87}
+.request-box{
+  background:#edf3e7;
+  border-color:rgba(92,121,91,.12);
+  border-radius:24px;
+}
+.request input{
+  background:#fffef9;
+  border-radius:16px;
+}
+.request button,.cta{
+  background:linear-gradient(145deg,#668e62,#4f754f);
+  border-radius:16px;
+}
+.map-view{
+  padding:14px 11px 30px;
+  background:
+    radial-gradient(circle at 15% 10%,#fff4ce 0,transparent 27%),
+    radial-gradient(circle at 88% 25%,#dff0e9 0,transparent 25%),
+    linear-gradient(180deg,#e9f0df,#f4ead1);
+  color:#304134;
+}
+.map-head h2{font-family:Georgia,serif;color:#304134;font-size:29px}
+.map-head p{color:#74806e}
+.map-head .sheet-kicker{color:#78946f}
+.map-paper{
+  min-height:860px;
+  border-radius:31px;
+  border:1px solid rgba(91,111,77,.16);
+  background:
+    radial-gradient(circle at 18% 18%,rgba(255,247,208,.95),transparent 24%),
+    radial-gradient(circle at 82% 75%,rgba(195,224,202,.72),transparent 27%),
+    linear-gradient(145deg,#f3dfad,#dce8c7 48%,#d5e7df);
+  box-shadow:0 16px 38px rgba(74,79,55,.14);
+}
+.map-paper:before{
+  opacity:.15;
+  background-image:
+    radial-gradient(#6f7657 .7px,transparent .7px);
+  background-size:9px 9px;
+}
+.map-paper:after{background:linear-gradient(transparent,rgba(255,255,255,.35),transparent);animation:wmScan 9s linear infinite}
+.map-title{
+  color:#66704e;
+  font-family:Georgia,serif;
+  font-size:15px;
+  letter-spacing:.13em;
+  text-shadow:none;
+}
+.compass{color:#829064;text-shadow:none;opacity:.7}
+.route{
+  border-top:2px dashed rgba(108,123,79,.35);
+  box-shadow:none;
+}
+.island{
+  border:1px solid rgba(93,123,79,.23);
+  background:rgba(131,164,106,.15);
+  box-shadow:inset 0 0 28px rgba(255,255,255,.22);
+}
+.world-pin{
+  min-width:142px;
+  min-height:80px;
+  padding:11px 12px;
+  border:1px solid rgba(89,108,76,.13);
+  border-radius:21px;
+  background:rgba(255,251,234,.9);
+  color:#354735;
+  box-shadow:0 10px 24px rgba(74,79,55,.13);
+  backdrop-filter:blur(8px);
+}
+.world-pin b{font-family:Georgia,serif;color:#3b513d}
+.world-pin small{color:#7c8876}
+.world-pin span{text-shadow:none}
+.world-pin:hover{
+  border-color:rgba(103,143,95,.35);
+  box-shadow:0 14px 28px rgba(74,79,55,.18);
+}
+.world-pin:after{background:#78a66f;box-shadow:0 0 9px rgba(120,166,111,.7)}
+.map-chip{
+  background:rgba(255,251,234,.8);
+  border-color:rgba(89,108,76,.13);
+  color:#5f705a;
+}
+.hud-readout{
+  background:rgba(255,252,236,.76);
+  border-color:rgba(89,108,76,.13);
+  color:#70806a;
+  box-shadow:0 7px 20px rgba(74,79,55,.08);
+}
+.hud-readout b{color:#496247}
+.hud-corner{border-color:rgba(111,145,98,.3)}
+.install-prompt{
+  background:rgba(255,253,245,.97);
+  border-color:rgba(75,96,77,.12);
+}
+.toast{
+  background:#35503a;
+  box-shadow:0 12px 30px rgba(44,66,47,.2);
+}
+.ai-status{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:7px 10px;border-radius:999px;
+  background:#fff1df;border:1px solid rgba(185,123,71,.12);
+  color:#8b6545;font-size:10px;font-weight:900;
+}
+.ai-status .dot{width:7px;height:7px;border-radius:50%;background:#78a66f;box-shadow:0 0 8px rgba(120,166,111,.7)}
+.ai-card{
+  background:linear-gradient(145deg,#fff4d9,#ffe8df)!important;
+}
+.ai-card .paper{
+  background:rgba(255,255,250,.96);
+}
+.ai-loading{
+  display:flex;align-items:center;gap:10px;color:#69776a;font-size:13px;
+}
+.ai-loading .bubbles{display:flex;gap:4px}
+.ai-loading i{width:7px;height:7px;border-radius:50%;background:#78a66f;animation:aiBounce .8s infinite alternate}
+.ai-loading i:nth-child(2){animation-delay:.15s}.ai-loading i:nth-child(3){animation-delay:.3s}
+@keyframes aiBounce{to{transform:translateY(-5px);opacity:.45}}
+@media(max-width:430px){
+  .topbar{padding-left:12px}
+  .brand-wrap h1{font-size:22px}
+  .brand-sub{font-size:8px}
+  .top-tool{min-width:44px;height:44px;padding:5px 6px}
+  .top-tool .tool-icon{font-size:15px}
+  .feed{padding:9px 7px 16px}
+  .card{padding:22px 15px 20px;border-radius:27px}
+  .bottom-nav{left:7px;right:7px;bottom:7px}
+  .map-paper{min-height:920px}
+  .world-pin{min-width:132px;min-height:78px}
+}
+
 </style>
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -152,18 +513,19 @@ body{background:#071116}
 <div class="app-shell">
   <header class="topbar">
     <div class="brand-wrap">
-      <div class="eyebrow">WATERMELONS // KNOWLEDGE SYSTEM</div>
+      <div class="eyebrow">YOUR LITTLE LEARNING GARDEN</div>
       <h1>Watermelons <span class="live-dot">●</span></h1>
+      <div class="brand-sub">wander • discover • remember</div>
     </div>
     <div class="top-actions">
-      <button id="soundBtn" class="top-tool" aria-label="Toggle soundscape"><span class="tool-icon">🔊</span><span>SOUND</span></button>
-      <button id="themeBtn" class="top-tool" aria-label="Change theme"><span class="tool-icon">◈</span><span>WORLD</span></button>
-      <button id="settingsBtn" class="top-tool" aria-label="Settings"><span class="tool-icon">⚙</span><span>SETUP</span></button>
+      <button id="aiBtn" class="top-tool ai-tool" aria-label="Ask ScottsTot"><span class="tool-icon">🧠</span><span>ASK AI</span></button>
+      <button id="soundBtn" class="top-tool" aria-label="Toggle soundscape"><span class="tool-icon">♫</span><span>SOUND</span></button>
+      <button id="settingsBtn" class="top-tool" aria-label="Settings"><span class="tool-icon">⚙</span><span>MORE</span></button>
     </div>
   </header>
   <div class="quest-strip">
-    <div class="quest-copy"><span id="questIcon">🧭</span><div><b id="questTitle">Daily Quest</b><small id="questText">Discover 3 new ideas</small></div></div>
-    <button id="xpPill" class="xp-pill">0 XP</button>
+    <div class="quest-copy"><span id="questIcon">🌱</span><div><b id="questTitle">Today's curiosity</b><small id="questText">Discover 3 new ideas</small></div></div>
+    <div class="quest-actions"><button id="adventureBtn" class="quest-bubble" aria-label="Choose your adventure">🧭</button><button id="xpPill" class="xp-pill">0 XP</button></div>
   </div>
 
   <main id="feed" class="feed" aria-live="polite"></main>
@@ -496,8 +858,7 @@ function wmAdventure(){
   });
 }
 
-/* Put a small adventure button into the quest strip. */
-document.getElementById('questText').parentElement.parentElement.insertAdjacentHTML('afterend','<button id="adventureBtn" class="icon-btn" aria-label="Choose your adventure">🧭</button>');
+/* Adventure button lives directly in the quest strip. */
 document.getElementById('adventureBtn').onclick=wmAdventure;
 
 
@@ -610,6 +971,131 @@ document.querySelectorAll('.nav-btn').forEach(btn=>{
 
 if('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(()=>{});
 if(!state.onboarding)onboarding();else renderFeed(nextBatch(8));
+
+
+/* SCOTTSTOT AI BRIDGE */
+const SCOTTS_TOT_URL = 'https://scottstot.scootyblocks.workers.dev';
+let aiBusy = false;
+
+function aiTopicForRequest(request=''){
+  const q = request.toLowerCase();
+  const hit = TOPICS.find(t => q.includes(t.name.toLowerCase()) || q.includes(t.id));
+  return hit ? hit.id : (selectedTopics()[0] || 'psychology');
+}
+
+function aiCardFromText(text, request=''){
+  const clean = String(text || '').replace(/\s+/g,' ').trim();
+  if(!clean) return null;
+  const theme = aiTopicForRequest(request);
+  const t = topic(theme);
+  let title = clean.split(/[.!?]/)[0].trim();
+  if(title.length < 8 || title.length > 70) title = request ? request.slice(0,58) : 'A fresh idea from ScottsTot';
+  if(title.length > 70) title = title.slice(0,67) + '…';
+  const dek = request ? `ScottsTot wandered into ${t.name.toLowerCase()} because you asked.` : `A fresh idea, generated just for your Watermelons garden.`;
+  return {
+    id:'ai-'+Date.now()+'-'+Math.random().toString(36).slice(2,8),
+    theme, type:'concept', tag:`${t.name} · ScottsTot`,
+    title, dek, body:clean
+  };
+}
+
+async function fetchAI(request=''){
+  const prompt = request
+    ? `Create one fascinating learning card about: ${request}. Prefer an accurate, surprising concept. Explain it conversationally in about 90 to 130 words. Do not use markdown headings.`
+    : `Create one fascinating learning card for a curious university student. Focus on ${topic(selectedTopics()[Math.floor(Math.random()*selectedTopics().length)]).name}. Prefer an accurate, surprising concept. Explain it conversationally in about 90 to 130 words. Do not use markdown headings.`;
+  const response = await fetch(SCOTTS_TOT_URL + '/generate', {
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({prompt,request,topics:selectedTopics(),difficulty:state.prefs.difficulty,novelty:state.prefs.novelty})
+  });
+  if(!response.ok) throw new Error('ScottsTot returned '+response.status);
+  const data = await response.json();
+  if(!data.ok || !data.text) throw new Error('No AI text returned');
+  return aiCardFromText(data.text, request);
+}
+
+async function addAICard(request='', prepend=false){
+  if(aiBusy)return;
+  aiBusy=true;
+  try{
+    const item = await fetchAI(request);
+    if(!item) throw new Error('Empty AI card');
+    state.generated=[...state.generated,item].slice(-120);
+    save('watermelons-generated',state.generated);
+    if(prepend){
+      feed.prepend(card(item));
+      feed.scrollTo({top:0,behavior:'smooth'});
+    }else{
+      feed.appendChild(card(item));
+      observeCards();
+    }
+    toast('🧠 ScottsTot grew a new idea');
+    return item;
+  }catch(e){
+    toast('ScottsTot is taking a breath. Your local garden is still growing.');
+    return null;
+  }finally{
+    aiBusy=false;
+  }
+}
+
+function aiSheet(){
+  showSheet(`
+    <div class="sheet-kicker">🧠 ScottsTot is listening</div>
+    <h2 id="sheetTitle">What are you curious about?</h2>
+    <p>Ask for a concept, a rabbit hole, a weird fact, or a connection between two ideas.</p>
+    <div class="ai-status"><span class="dot"></span> AI garden connection: online</div>
+    <div class="request-box" style="margin-top:14px">
+      <h3>Give it a direction</h3>
+      <div class="request"><input id="aiInput" placeholder="e.g. why people conform"><button id="aiRequestBtn">Grow</button></div>
+      <p style="font-size:11px;margin-bottom:0">Try “obscure Greek myths”, “Stoicism and anger”, or “why muscle grows”.</p>
+    </div>
+    <button class="cta" id="aiSurpriseBtn">🍉 Surprise me</button>
+  `);
+  const input=document.getElementById('aiInput');
+  const run=async(q)=>{
+    q=(q||'').trim();
+    if(!q)return;
+    closeSheet();
+    toast('🧠 ScottsTot is growing your idea…');
+    await addAICard(q,true);
+  };
+  document.getElementById('aiRequestBtn').onclick=()=>run(input.value);
+  document.getElementById('aiSurpriseBtn').onclick=()=>{closeSheet();toast('🧠 ScottsTot is choosing…');addAICard('',true)};
+  input.addEventListener('keydown',e=>{if(e.key==='Enter')run(input.value)});
+}
+
+document.getElementById('aiBtn').onclick=aiSheet;
+
+/* Replace the old local request behavior with a real AI request, while retaining local fallback. */
+const oldShowExplore = showExplore;
+showExplore = function(){
+  showSheet(`<div class="sheet-kicker">✦ Explore</div><h2 id="sheetTitle">Where should we wander?</h2><p>Pick a world or ask ScottsTot to grow something specific.</p>
+    <div class="topic-grid">${TOPICS.map(t=>`<button class="topic" data-explore-topic="${t.id}"><span>${t.icon}</span><strong>${t.name}</strong><small>${t.desc}</small></button>`).join('')}</div>
+    <div class="request-box"><h3>Ask ScottsTot</h3><p class="small">It can turn a question into a little learning card for your feed.</p>
+      <div class="request"><input id="topicInput" placeholder="What do you want to learn?"><button id="requestBtn">Grow</button></div>
+    </div>`);
+  document.querySelectorAll('[data-explore-topic]').forEach(b=>b.onclick=()=>{
+    const id=b.dataset.exploreTopic;
+    closeSheet();
+    state.prefs.topics=[id,...state.prefs.topics.filter(x=>x!==id)];
+    save('watermelons-prefs',state.prefs);
+    renderFeed(nextBatch(8));
+    addAICard('',false);
+  });
+  const request=async()=>{
+    const q=document.getElementById('topicInput').value.trim();
+    if(!q)return;
+    closeSheet();
+    toast('🧠 ScottsTot is growing your trail…');
+    await addAICard(q,true);
+  };
+  document.getElementById('requestBtn').onclick=request;
+  document.getElementById('topicInput').addEventListener('keydown',e=>{if(e.key==='Enter')request()});
+};
+
+/* Ask the AI for a fresh card after the first local batch, so the feed immediately proves the connection. */
+setTimeout(()=>{ if(state.onboarding) addAICard('',false); },900);
 
 </script>
 </body>
