@@ -65,6 +65,48 @@ linear-gradient(135deg,#e9d39f,#cda86c 45%,#e3c98f)}
 .sound-on{background:#e6efcf!important;color:#314a2c!important}.sound-pulse{animation:soundPulse 1.8s ease-in-out infinite}
 @keyframes soundPulse{50%{transform:scale(1.08)}}
 
+
+/* WATERMELONS 2.0: HOLOGRAPHIC STUDY DECK */
+:root{--cyan:#79e8ff;--violet:#b69cff;--gold:#ffd77a;--hud:rgba(9,18,25,.78)}
+body{background:#071116}
+.app-shell{background:radial-gradient(circle at 50% -10%,rgba(102,220,214,.12),transparent 32%),#0a151b}
+.topbar{background:rgba(8,18,23,.72);border-bottom:1px solid rgba(121,232,255,.14);box-shadow:0 8px 35px rgba(0,0,0,.18)}
+.eyebrow{color:#79d9d0}h1{color:#f2fbf8;letter-spacing:.02em}.icon-btn{background:rgba(121,232,255,.07);color:#d9f8f5;border:1px solid rgba(121,232,255,.12);box-shadow:inset 0 0 18px rgba(121,232,255,.04)}
+.quest-strip{background:rgba(7,17,22,.68);border-bottom:1px solid rgba(121,232,255,.11);color:#edfdfa}.quest-copy small{color:#8fa9a8}.xp-pill{background:rgba(121,232,255,.08);border-color:rgba(121,232,255,.18);color:#bff7f0}
+.feed{background:#071116}.card{overflow:hidden;background:#071116}.card:before{filter:saturate(1.12) contrast(1.05);transform:scale(1.02)}
+.card:after{background:linear-gradient(180deg,rgba(4,10,13,.02),rgba(4,10,13,.08) 28%,rgba(3,9,12,.9) 100%)}
+.card:global{} .card:before{animation:wmBreathe 14s ease-in-out infinite alternate}
+.card .content{position:relative}.card .content:before{content:"";position:absolute;left:-16px;right:-16px;bottom:-20px;height:190px;background:radial-gradient(ellipse at 50% 100%,rgba(121,232,255,.09),transparent 65%);pointer-events:none;z-index:-1}
+.card h2{text-shadow:0 3px 22px rgba(0,0,0,.4)}
+.card-top .pill{border:1px solid rgba(121,232,255,.18);background:rgba(6,16,20,.55);box-shadow:0 0 20px rgba(121,232,255,.05)}
+.paper{background:rgba(246,250,241,.94);box-shadow:0 16px 50px rgba(0,0,0,.26),0 0 30px rgba(121,232,255,.05);border-color:rgba(255,255,255,.5)}
+.actions button,.sub-actions button{background:rgba(5,15,19,.62);border-color:rgba(121,232,255,.16);box-shadow:0 0 18px rgba(121,232,255,.04)}
+.bottom-nav{background:rgba(7,16,21,.88);border-top:1px solid rgba(121,232,255,.13);grid-template-columns:repeat(5,1fr);box-shadow:0 -12px 35px rgba(0,0,0,.2)}.nav-btn{color:#76908e}.nav-btn.active{color:#79e8ff;text-shadow:0 0 15px rgba(121,232,255,.6)}
+.nav-btn.active:after{content:"";display:block;width:18px;height:2px;margin:3px auto 0;background:#79e8ff;border-radius:4px;box-shadow:0 0 12px #79e8ff}
+@keyframes wmBreathe{from{transform:scale(1.02) translate3d(0,0,0)}to{transform:scale(1.07) translate3d(-1%,1%,0)}}
+@keyframes wmScan{0%{transform:translateY(-100%);opacity:0}10%,90%{opacity:.18}100%{transform:translateY(100%);opacity:0}}
+@keyframes wmPulse{50%{box-shadow:0 0 0 5px rgba(121,232,255,.03),0 0 28px rgba(121,232,255,.28)}}
+
+/* cinematic map console */
+.map-view{position:relative;background:radial-gradient(circle at 50% 20%,#122d35 0,#071116 52%,#04090c 100%);color:#dffaf6;padding:16px 12px 28px}
+.map-view:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.14;background:repeating-linear-gradient(0deg,transparent 0,transparent 3px,rgba(121,232,255,.08) 4px);mix-blend-mode:screen}
+.map-head{align-items:center;padding:4px 4px 12px}.map-head h2{font-family:ui-sans-serif,system-ui,sans-serif;font-size:27px;letter-spacing:-.04em;color:#effffd}.map-head p{color:#789b9c}.map-head .sheet-kicker{color:#6ee3df;letter-spacing:.18em}
+.map-paper{min-height:610px;border-radius:26px;border:1px solid rgba(121,232,255,.24);background:radial-gradient(circle at 50% 50%,rgba(41,106,116,.2),transparent 38%),linear-gradient(145deg,#0d222a,#08151b 52%,#0b1b20);box-shadow:inset 0 0 70px rgba(121,232,255,.06),0 20px 70px rgba(0,0,0,.42);overflow:hidden}
+.map-paper:before{opacity:.16;background-image:linear-gradient(rgba(121,232,255,.13) 1px,transparent 1px),linear-gradient(90deg,rgba(121,232,255,.13) 1px,transparent 1px);background-size:34px 34px}
+.map-paper:after{content:"";position:absolute;left:0;right:0;top:0;height:35%;background:linear-gradient(transparent,rgba(121,232,255,.07),transparent);animation:wmScan 7s linear infinite;pointer-events:none}
+.map-title{top:17px;color:#d9fffa;font-family:ui-sans-serif,system-ui,sans-serif;font-size:12px;letter-spacing:.28em;text-shadow:0 0 18px rgba(121,232,255,.7)}
+.compass{color:#79e8ff;filter:none;opacity:.8;text-shadow:0 0 18px rgba(121,232,255,.7)}
+.route{border-top:1px dashed rgba(121,232,255,.5);box-shadow:0 0 8px rgba(121,232,255,.22);animation:wmRoute 3.5s ease-in-out infinite alternate}.route.r2{animation-delay:1s}.route.r3{animation-delay:2s}
+@keyframes wmRoute{from{opacity:.35}to{opacity:1}}
+.island{border:1px solid rgba(121,232,255,.22);background:radial-gradient(circle at 35% 35%,rgba(121,232,255,.18),rgba(41,89,91,.1) 45%,transparent 70%);box-shadow:inset 0 0 35px rgba(121,232,255,.08),0 0 20px rgba(121,232,255,.04)}
+.world-pin{border:1px solid rgba(121,232,255,.2);border-radius:18px;background:rgba(8,24,30,.76);color:#e8fffb;box-shadow:0 8px 25px rgba(0,0,0,.28),inset 0 0 18px rgba(121,232,255,.035);backdrop-filter:blur(10px);transition:.2s ease}
+.world-pin:before{content:"";position:absolute;inset:5px;border:1px solid rgba(121,232,255,.06);border-radius:13px;pointer-events:none}.world-pin b{font-family:ui-sans-serif,system-ui,sans-serif;color:#eaffff}.world-pin small{color:#7fa7a7}.world-pin span{filter:none;text-shadow:0 0 12px rgba(121,232,255,.7)}.world-pin:hover{transform:translateY(-3px) scale(1.025);border-color:rgba(121,232,255,.55);box-shadow:0 0 25px rgba(121,232,255,.16)}
+.pin-psych{animation:wmPulse 3s infinite}.pin-phil{animation:wmPulse 3.8s .5s infinite}.pin-myth{animation:wmPulse 3.2s 1s infinite}.pin-faith{animation:wmPulse 4s 1.4s infinite}.pin-fit{animation:wmPulse 3.5s 1.8s infinite}.pin-history{animation:wmPulse 4.2s 2s infinite}.pin-science{animation:wmPulse 3.4s 2.3s infinite}.pin-lit{animation:wmPulse 3.9s 2.6s infinite}
+.map-legend{gap:6px}.map-chip{background:rgba(121,232,255,.05);border-color:rgba(121,232,255,.14);color:#9ed6d3}
+
+/* HUD readouts */
+.hud-readout{position:absolute;left:14px;bottom:14px;z-index:3;padding:8px 10px;border:1px solid rgba(121,232,255,.13);border-radius:12px;background:rgba(3,12,16,.62);backdrop-filter:blur(8px);font:700 9px/1.45 ui-monospace,monospace;color:#69c9c6;letter-spacing:.06em}.hud-readout b{color:#e4fffb}.hud-corner{position:absolute;width:30px;height:30px;border-color:rgba(121,232,255,.42);border-style:solid;z-index:3;pointer-events:none}.hud-corner.a{left:10px;top:10px;border-width:1px 0 0 1px}.hud-corner.b{right:10px;bottom:10px;border-width:0 1px 1px 0}
+
 </style>
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -436,7 +478,7 @@ function wmMapView(){
 }
 function showMap(){
   const pins = WM_WORLDS.map(w=>`<button class="world-pin pin-${w[0]}" data-map-topic="${w[0]}"><span>${w[1]}</span><b>${w[2]}</b><small>${w[3]}</small></button>`).join('');
-  feed.innerHTML=`<section class="map-view"><div class="map-head"><div><div class="sheet-kicker">🗺️ THE WATERMELONS WORLD</div><h2>Choose your next shore.</h2><p>Tap a world, then return to the feed whenever you want.</p></div><button id="mapWander" class="xp-pill">🎲 Wander</button></div><div class="map-paper"><div class="map-title">THE CURIOUS SEAS</div><div class="compass">✥</div><div class="island i1"></div><div class="island i2"></div><div class="island i3"></div><div class="island i4"></div><div class="route r1"></div><div class="route r2"></div><div class="route r3"></div>${pins}</div><div class="map-legend">${WM_WORLDS.map(w=>`<span class="map-chip">${w[1]} ${w[2]}</span>`).join('')}</div></section>`;
+  feed.innerHTML=`<section class="map-view"><div class="map-head"><div><div class="sheet-kicker">◈ WATERMELONS // KNOWLEDGE SYSTEM</div><h2>Choose your next world.</h2><p>Live curiosity map • ${WM_WORLDS.length} active worlds</p></div><button id="mapWander" class="xp-pill">✦ Randomize</button></div><div class="map-paper"><div class="hud-corner a"></div><div class="hud-corner b"></div><div class="map-title">THE CURIOUS NETWORK</div><div class="compass">✥</div><div class="island i1"></div><div class="island i2"></div><div class="island i3"></div><div class="island i4"></div><div class="route r1"></div><div class="route r2"></div><div class="route r3"></div>${pins}<div class="hud-readout">SYSTEM STATUS: <b>ONLINE</b><br>DISCOVERY ENGINE: <b>ACTIVE</b><br>CURIOUSITY FIELD: <b>EXPANDING</b></div></div><div class="map-legend">${WM_WORLDS.map(w=>`<span class="map-chip">${w[1]} ${w[2]}</span>`).join('')}</div></section>`;
   document.querySelectorAll('[data-map-topic]').forEach(b=>b.onclick=()=>{
     const id=b.dataset.mapTopic;
     state.prefs.topics=[id,...state.prefs.topics.filter(x=>x!==id)];
@@ -449,45 +491,38 @@ function showMap(){
   document.getElementById('mapWander').onclick=()=>{state.tab='feed';document.querySelectorAll('.nav-btn').forEach(x=>x.classList.toggle('active',x.dataset.tab==='feed'));state.prefs.novelty=100;save('watermelons-prefs',state.prefs);renderFeed(nextBatch(10));toast('🎲 The map chose your next adventure');};
 }
 
-/* SIMPLE PROCEDURAL SOUNDSCAPE
-   Uses the browser's Web Audio API to synthesize ambient tones locally.
-   No copyrighted recordings or external audio files are bundled. */
-let wmAudio=null, wmGain=null, wmTimer=null, wmPlaying=false;
-const WM_SOUNDSETS={
-  meadow:{base:196,notes:[0,3,7,10],wave:'sine'},
-  ancient:{base:174,notes:[0,4,7,11],wave:'triangle'},
-  pirate:{base:146,notes:[0,5,7,10],wave:'sine'},
-  night:{base:110,notes:[0,3,5,10],wave:'sine'},
-  sunrise:{base:220,notes:[0,4,7,9],wave:'triangle'}
+/* PROCEDURAL LO-FI SOUNDSCAPE 2.0
+   Generates a tiny evolving music bed locally. No external recordings or copyrighted files. */
+let wmAudio=null,wmMaster=null,wmPlaying=false,wmLoop=null,wmStep=0,wmThemeTimer=null;
+const WM_MUSIC={
+ meadow:{bpm:74,root:196,scale:[0,2,4,7,9],chords:[[0,4,7],[2,5,9],[4,7,11],[0,3,7]],wave:'triangle'},
+ ancient:{bpm:66,root:174,scale:[0,2,3,7,9],chords:[[0,3,7],[2,5,9],[3,7,10],[0,4,7]],wave:'sine'},
+ pirate:{bpm:78,root:146,scale:[0,2,3,5,7,10],chords:[[0,3,7],[5,8,10],[3,7,10],[0,5,7]],wave:'triangle'},
+ night:{bpm:62,root:110,scale:[0,3,5,7,10],chords:[[0,3,7],[5,8,10],[3,7,10],[0,5,7]],wave:'sine'},
+ sunrise:{bpm:76,root:220,scale:[0,2,4,5,7,9,11],chords:[[0,4,7],[2,5,9],[4,7,11],[0,4,9]],wave:'triangle'}
 };
+function wmTone(freq,dur,when,type='sine',vol=.025,attack=.03){
+ if(!wmAudio||!wmMaster)return; const o=wmAudio.createOscillator(),g=wmAudio.createGain();o.type=type;o.frequency.value=freq;
+ g.gain.setValueAtTime(.0001,when);g.gain.exponentialRampToValueAtTime(vol,when+attack);g.gain.exponentialRampToValueAtTime(.0001,when+dur);o.connect(g);g.connect(wmMaster);o.start(when);o.stop(when+dur+.02);
+}
+function wmKick(when){if(!wmAudio)return;wmTone(72,.11,when,'sine',.018,.005);wmTone(42,.18,when+.015,'sine',.012,.005)}
+function wmMusicBar(){
+ if(!wmAudio||!wmPlaying)return; const m=WM_MUSIC[wmTheme]||WM_MUSIC.meadow, beat=60/m.bpm, now=wmAudio.currentTime+.03, chord=m.chords[wmStep%m.chords.length];
+ chord.forEach((n,i)=>wmTone(m.root*Math.pow(2,n/12),beat*3.6,now+i*.025,m.wave,.018,.12));
+ wmTone(m.root/2,beat*3.5,now,'sine',.022,.08);
+ for(let i=0;i<4;i++) if((wmStep+i)%4===0) wmKick(now+i*beat);
+ const melodyNotes=wmStep%2?[m.scale[1],m.scale[3],m.scale[4]]:[m.scale[0],m.scale[2],m.scale[3],m.scale[1]];
+ melodyNotes.forEach((n,i)=>{const t=now+(i+.4)*beat*.72;wmTone(m.root*2*Math.pow(2,n/12),beat*.48,t,'sine',.008,.06)});
+ wmStep++; wmLoop=setTimeout(wmMusicBar,beat*4000);
+}
 function wmStartSound(){
-  if(wmPlaying)return;
-  try{
-    wmAudio=new (window.AudioContext||window.webkitAudioContext)();
-    wmGain=wmAudio.createGain(); wmGain.gain.value=.035; wmGain.connect(wmAudio.destination);
-    wmPlaying=true; document.getElementById('soundBtn').textContent='🔊';document.getElementById('soundBtn').classList.add('sound-on','sound-pulse');
-    wmSoundTick(); wmTimer=setInterval(wmSoundTick,3200);
-  }catch{toast('Soundscape is not available in this browser yet.');}
+ if(wmPlaying)return; try{wmAudio=new(window.AudioContext||window.webkitAudioContext)();wmMaster=wmAudio.createGain();wmMaster.gain.value=.18;wmMaster.connect(wmAudio.destination);wmPlaying=true;wmStep=0;
+ document.getElementById('soundBtn').textContent='🔊';document.getElementById('soundBtn').classList.add('sound-on','sound-pulse');wmMusicBar();
+ }catch{toast('Soundscape is not available in this browser yet.');}
 }
-function wmSoundTick(){
-  if(!wmAudio||!wmPlaying)return;
-  const set=WM_SOUNDSETS[wmTheme]||WM_SOUNDSETS.meadow;
-  const now=wmAudio.currentTime, osc=wmAudio.createOscillator(), g=wmAudio.createGain();
-  const step=set.notes[Math.floor(Math.random()*set.notes.length)];
-  osc.type=set.wave; osc.frequency.value=set.base*Math.pow(2,step/12);
-  g.gain.setValueAtTime(.0001,now);g.gain.exponentialRampToValueAtTime(.045,now+.25);g.gain.exponentialRampToValueAtTime(.0001,now+2.7);
-  osc.connect(g);g.connect(wmGain);osc.start(now);osc.stop(now+2.8);
-}
-function wmStopSound(){
-  if(!wmPlaying)return;
-  wmPlaying=false; if(wmTimer)clearInterval(wmTimer); wmTimer=null;
-  try{wmGain?.gain.exponentialRampToValueAtTime(.0001,wmAudio.currentTime+.2);setTimeout(()=>wmAudio?.close(),300)}catch{}
-  wmAudio=null;wmGain=null;document.getElementById('soundBtn').textContent='🔇';document.getElementById('soundBtn').classList.remove('sound-on','sound-pulse');
-}
+function wmStopSound(){if(!wmPlaying)return;wmPlaying=false;clearTimeout(wmLoop);wmLoop=null;try{wmMaster?.gain.exponentialRampToValueAtTime(.0001,wmAudio.currentTime+.25);setTimeout(()=>wmAudio?.close(),350)}catch{}wmAudio=null;wmMaster=null;document.getElementById('soundBtn').textContent='🔇';document.getElementById('soundBtn').classList.remove('sound-on','sound-pulse')}
 document.getElementById('soundBtn').onclick=()=>wmPlaying?wmStopSound():wmStartSound();
-
-const wmOldApplyTheme=wmApplyTheme;
-wmApplyTheme=function(k){wmOldApplyTheme(k);if(wmPlaying){wmStopSound();wmStartSound();}};
+const wmOldApplyTheme=wmApplyTheme;wmApplyTheme=function(k){wmOldApplyTheme(k);if(wmPlaying){wmStopSound();setTimeout(wmStartSound,120)}};
 
 /* Make the existing nav actually switch to the new map view. */
 document.querySelectorAll('.nav-btn').forEach(btn=>{
