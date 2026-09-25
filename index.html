@@ -518,7 +518,7 @@ body{
       <div class="brand-sub">wander • discover • remember</div>
     </div>
     <div class="top-actions">
-      <button id="aiBtn" class="top-tool ai-tool" aria-label="Ask ScottsTot"><span class="tool-icon">🧠</span><span>ASK AI</span></button>
+      <button type="button" id="aiBtn" class="top-tool ai-tool" data-action="ask-ai" aria-label="Ask ScottsTot"><span class="tool-icon">🧠</span><span>ASK AI</span></button>
       <button id="soundBtn" class="top-tool" aria-label="Toggle soundscape"><span class="tool-icon">♫</span><span>SOUND</span></button>
       <button id="settingsBtn" class="top-tool" aria-label="Settings"><span class="tool-icon">⚙</span><span>MORE</span></button>
     </div>
@@ -1065,7 +1065,24 @@ function aiSheet(){
   input.addEventListener('keydown',e=>{if(e.key==='Enter')run(input.value)});
 }
 
-document.getElementById('aiBtn').onclick=aiSheet;
+/* Robust AI button binding */
+window.WatermelonsAskAI = aiSheet;
+function bindAIButton(){
+  const btn = document.getElementById('aiBtn');
+  if(!btn) return;
+  btn.onclick = null;
+  btn.addEventListener('click', function wmAskAIHandler(e){
+    e.preventDefault();
+    e.stopPropagation();
+    window.WatermelonsAskAI();
+  }, {once:false});
+}
+if(document.readyState === 'loading'){
+  document.addEventListener('DOMContentLoaded', bindAIButton, {once:true});
+}else{
+  bindAIButton();
+}
+
 
 /* Replace the old local request behavior with a real AI request, while retaining local fallback. */
 const oldShowExplore = showExplore;
@@ -1093,6 +1110,16 @@ showExplore = function(){
   document.getElementById('requestBtn').onclick=request;
   document.getElementById('topicInput').addEventListener('keydown',e=>{if(e.key==='Enter')request()});
 };
+
+/* Final delegated fallback: even if another UI initializer touches the button,
+   the AI control remains functional. */
+document.addEventListener('click', function(e){
+  const btn = e.target.closest && e.target.closest('[data-action="ask-ai"]');
+  if(!btn) return;
+  if(e.defaultPrevented) return;
+  e.preventDefault();
+  if(typeof window.WatermelonsAskAI === 'function') window.WatermelonsAskAI();
+});
 
 /* Ask the AI for a fresh card after the first local batch, so the feed immediately proves the connection. */
 setTimeout(()=>{ if(state.onboarding) addAICard('',false); },900);
