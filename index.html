@@ -244,7 +244,7 @@ body{
   padding:8px 11px;
 }
 .feed{
-  height:calc(100dvh - 92px - 56px - 82px);
+  height:calc(100dvh - 92px - 56px - 70px);
   padding:12px 10px 18px;
   background:
     radial-gradient(circle at 10% 10%,rgba(255,255,255,.9),transparent 20%),
@@ -647,6 +647,244 @@ body{
   .ai-chat{border-radius:24px}
 }
 
+
+/* WATERMELONS 6.0 • LIVING REELS + CLEAN DOCK */
+.bottom-nav{
+  left:12px;right:12px;bottom:10px;
+  width:auto;
+  height:70px;
+  padding:5px;
+  display:grid;
+  grid-template-columns:repeat(6,minmax(0,1fr));
+  gap:4px;
+  align-items:stretch;
+  border-radius:24px;
+  z-index:50;
+  pointer-events:auto;
+}
+.nav-btn{
+  width:100%;
+  min-width:0;
+  height:100%;
+  margin:0;
+  padding:5px 2px;
+  border-radius:18px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:3px;
+  transform:none !important;
+}
+.nav-btn i{
+  width:auto;height:auto;
+  font-size:19px;
+  line-height:1;
+}
+.nav-btn span{
+  white-space:nowrap;
+  font-size:7px;
+  letter-spacing:.02em;
+}
+.nav-map,.nav-ai{
+  width:100%;
+  height:100%;
+  margin:0;
+  border-radius:18px;
+  transform:none !important;
+}
+.nav-map i,.nav-ai i{
+  width:auto;height:auto;
+  background:none;
+  box-shadow:none;
+  border:0;
+}
+.nav-map.active,.nav-ai.active{
+  transform:none !important;
+}
+.feed{
+  padding-bottom:96px;
+}
+.ai-page{
+  padding-bottom:100px;
+}
+
+/* Keep interactive content safely above the dock. */
+.feed .card{
+  margin-bottom:18px;
+}
+.card .actions{
+  position:relative;
+  z-index:5;
+}
+.card .actions button,
+.card .sub-actions button{
+  position:relative;
+  z-index:6;
+  pointer-events:auto;
+}
+.map-view{
+  padding-bottom:108px;
+}
+.sheet-card{
+  padding-bottom:calc(24px + env(safe-area-inset-bottom));
+}
+.sheet-backdrop{
+  z-index:80;
+}
+.toast{
+  z-index:100;
+}
+
+/* Reel backgrounds: every category gets its own visual world. */
+.card{
+  position:relative;
+  isolation:isolate;
+}
+.card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-2;
+  opacity:1;
+  background-size:cover;
+  background-position:center;
+  transform:scale(1.02);
+}
+.card::after{
+  z-index:-1;
+  background:
+    linear-gradient(180deg,rgba(18,30,21,.03) 0%,rgba(18,30,21,.10) 34%,rgba(18,30,21,.82) 100%),
+    linear-gradient(90deg,rgba(18,30,21,.12),transparent 55%);
+}
+.card[data-theme="psychology"]::before,
+.card.psychology::before{
+  background:
+    radial-gradient(circle at 25% 22%,rgba(255,224,168,.78),transparent 18%),
+    radial-gradient(circle at 72% 32%,rgba(181,211,190,.62),transparent 25%),
+    linear-gradient(140deg,#879f83,#c7d2ae 46%,#6c896e);
+}
+.card[data-theme="philosophy"]::before,
+.card.philosophy::before{
+  background:
+    radial-gradient(ellipse at 30% 22%,rgba(246,239,202,.72),transparent 18%),
+    linear-gradient(155deg,#7f9a77,#bdc99e 42%,#58715a);
+}
+.card[data-theme="mythology"]::before,
+.card.mythology::before{
+  background:
+    radial-gradient(ellipse at 65% 18%,rgba(255,221,165,.72),transparent 17%),
+    linear-gradient(145deg,#8b6e52,#c9a774 42%,#5b5048);
+}
+.card[data-theme="faith"]::before,
+.card.faith::before{
+  background:
+    radial-gradient(circle at 74% 18%,rgba(255,229,166,.82),transparent 18%),
+    linear-gradient(150deg,#7f9c86,#c7d0ae 48%,#6e7e69);
+}
+.card[data-theme="fitness"]::before,
+.card.fitness::before{
+  background:
+    radial-gradient(circle at 72% 25%,rgba(255,186,125,.52),transparent 20%),
+    linear-gradient(145deg,#566a65,#9ba98d 48%,#384a46);
+}
+.card[data-theme="history"]::before,
+.card.history::before{
+  background:
+    radial-gradient(ellipse at 22% 18%,rgba(246,220,159,.72),transparent 18%),
+    linear-gradient(145deg,#806b52,#b9a57c 50%,#5c6550);
+}
+.card[data-theme="science"]::before,
+.card.science::before{
+  background:
+    radial-gradient(circle at 72% 25%,rgba(168,224,244,.8),transparent 18%),
+    radial-gradient(circle at 25% 65%,rgba(176,207,235,.42),transparent 25%),
+    linear-gradient(145deg,#46647a,#8bb0bd 48%,#45576f);
+}
+.card[data-theme="literature"]::before,
+.card.literature::before{
+  background:
+    radial-gradient(circle at 28% 22%,rgba(255,219,159,.78),transparent 17%),
+    linear-gradient(145deg,#6f765f,#b8ad82 50%,#514d46);
+}
+
+/* If the original card doesn't expose a theme class, infer it from its data attribute. */
+.card[data-topic="psychology"]::before{background:radial-gradient(circle at 25% 22%,rgba(255,224,168,.78),transparent 18%),linear-gradient(140deg,#879f83,#c7d2ae 46%,#6c896e)}
+.card[data-topic="philosophy"]::before{background:radial-gradient(ellipse at 30% 22%,rgba(246,239,202,.72),transparent 18%),linear-gradient(155deg,#7f9a77,#bdc99e 42%,#58715a)}
+.card[data-topic="mythology"]::before{background:radial-gradient(ellipse at 65% 18%,rgba(255,221,165,.72),transparent 17%),linear-gradient(145deg,#8b6e52,#c9a774 42%,#5b5048)}
+.card[data-topic="faith"]::before{background:radial-gradient(circle at 74% 18%,rgba(255,229,166,.82),transparent 18%),linear-gradient(150deg,#7f9c86,#c7d0ae 48%,#6e7e69)}
+.card[data-topic="fitness"]::before{background:radial-gradient(circle at 72% 25%,rgba(255,186,125,.52),transparent 20%),linear-gradient(145deg,#566a65,#9ba98d 48%,#384a46)}
+.card[data-topic="history"]::before{background:radial-gradient(ellipse at 22% 18%,rgba(246,220,159,.72),transparent 18%),linear-gradient(145deg,#806b52,#b9a57c 50%,#5c6550)}
+.card[data-topic="science"]::before{background:radial-gradient(circle at 72% 25%,rgba(168,224,244,.8),transparent 18%),radial-gradient(circle at 25% 65%,rgba(176,207,235,.42),transparent 25%),linear-gradient(145deg,#46647a,#8bb0bd 48%,#45576f)}
+.card[data-topic="literature"]::before{background:radial-gradient(circle at 28% 22%,rgba(255,219,159,.78),transparent 17%),linear-gradient(145deg,#6f765f,#b8ad82 50%,#514d46)}
+
+/* Extra visual texture, like soft illustrations rather than flat gradients. */
+.card[data-theme="mythology"] .content::before,
+.card[data-topic="mythology"] .content::before{
+  content:"🏛️";
+  position:absolute;
+  right:18px;top:18px;
+  font-size:52px;
+  opacity:.18;
+  filter:grayscale(.1);
+}
+.card[data-theme="philosophy"] .content::before,
+.card[data-topic="philosophy"] .content::before{
+  content:"🌿";
+  position:absolute;
+  right:20px;top:18px;
+  font-size:48px;
+  opacity:.18;
+}
+.card[data-theme="psychology"] .content::before,
+.card[data-topic="psychology"] .content::before{
+  content:"🧠";
+  position:absolute;
+  right:20px;top:18px;
+  font-size:43px;
+  opacity:.16;
+}
+.card[data-theme="science"] .content::before,
+.card[data-topic="science"] .content::before{
+  content:"✦";
+  position:absolute;
+  right:26px;top:22px;
+  font-size:58px;
+  opacity:.22;
+}
+.card[data-theme="faith"] .content::before,
+.card[data-topic="faith"] .content::before{
+  content:"☀";
+  position:absolute;
+  right:23px;top:20px;
+  font-size:49px;
+  opacity:.17;
+}
+.card[data-theme="fitness"] .content::before,
+.card[data-topic="fitness"] .content::before{
+  content:"✦";
+  position:absolute;
+  right:24px;top:22px;
+  font-size:48px;
+  opacity:.16;
+}
+
+/* Make the AI page remain comfortably tappable above the dock. */
+.ai-page .ai-composer{
+  margin-bottom:4px;
+}
+@media(max-width:430px){
+  .bottom-nav{
+    left:6px;right:6px;bottom:6px;height:68px;
+    grid-template-columns:repeat(6,minmax(0,1fr));
+  }
+  .nav-btn{border-radius:16px}
+  .nav-btn i{font-size:17px}
+  .nav-btn span{font-size:6.5px}
+  .feed{padding-bottom:92px}
+  .map-view{padding-bottom:100px}
+}
+
 </style>
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -678,7 +916,7 @@ body{
     <div class="nav-glow"></div>
     <button type="button" class="nav-btn active" data-tab="feed"><i>⌂</i><span>HOME</span></button>
     <button type="button" class="nav-btn" data-tab="explore"><i>✦</i><span>EXPLORE</span></button>
-    <button type="button" class="nav-btn nav-map" data-tab="map"><i>◉</i><span>MAP</span></button>
+    <button type="button" class="nav-btn" data-tab="map"><i>◉</i><span>MAP</span></button>
     <button type="button" class="nav-btn nav-ai" data-tab="ai"><i>🧠</i><span>SCOTTS</span></button>
     <button type="button" class="nav-btn" data-tab="saved"><i>♡</i><span>SAVED</span></button>
     <button type="button" class="nav-btn" data-tab="journey"><i>◌</i><span>JOURNEY</span></button>
