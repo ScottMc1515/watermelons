@@ -2826,81 +2826,13 @@ function renderAIChat(){
     `)
     .join("");
 
-    document
-    .querySelectorAll("[data-ai-prompt]")
-    .forEach(btn=>{
+  const page=document.querySelector(".ai-page");
 
-      btn.onclick=()=>{
-
-        const prompt=btn.dataset.aiPrompt;
-
-        if(input){
-          input.value=prompt;
-          input.focus();
-        }
-
-        askScotts(prompt);
-
-      };
-
-    });
-
-}
-
-async function askScotts(question){
-
-  if(!question || aiBusy){
-    return;
-  }
-
-  const box=document.getElementById("aiChat");
-  const input=document.getElementById("aiPageInput");
-  const send=document.getElementById("aiPageSend");
-
-  aiBusy=true;
-
-  if(send){
-    send.disabled=true;
-    send.textContent="…";
-  }
-
-  aiChat.push({
-    role:"user",
-    text:question
-  });
-
-  renderAIChat();
-
-  if(input){
-    input.value="";
-  }
-
-  if(box){
-
-    box.insertAdjacentHTML(
-      "beforeend",
-      `
-        <div
-          class="ai-thinking"
-          id="aiThinking"
-        >
-          <i></i>
-          <i></i>
-          <i></i>
-          <span>ScottsTot is thinking…</span>
-        </div>
-      `
-    );
-
-    const page=document.querySelector(".ai-page");
-
-    if(page){
-      page.scrollTop=page.scrollHeight;
-
+  if(page){
+    page.scrollTop=page.scrollHeight;
   }
 
 }
-
 function showAIPage(){
 
   const feed=document.getElementById("feed");
