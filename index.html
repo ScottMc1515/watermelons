@@ -3047,17 +3047,17 @@ async function askScotts(question){
 
   try{
 
-    const recent=
-      aiChat
-        .slice(-8)
-        .map(
-          message=>
-            (message.role==="user"
-              ?"User: "
-              :"ScottsTot: ")
-            +message.text
-        )
-        .join("\n");
+    const conversation = aiChat
+  .slice(-12)
+  .map(message => ({
+    role: message.role === "user" ? "user" : "assistant",
+    content: message.text
+  }));
+
+const prompt = JSON.stringify({
+  conversation,
+  currentUserMessage: question
+});
 
     const prompt=`
 
