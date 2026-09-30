@@ -1133,13 +1133,19 @@ h1{
 .feed.ai-page{
   height:calc(100dvh - 88px - 50px - 76px);
   min-height:0;
-  overflow-y:auto;
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
   overflow-x:hidden;
   scroll-snap-type:none;
   box-sizing:border-box;
-  padding:18px 14px 120px;
+  padding:18px 14px 10px;
   background:
-    radial-gradient(circle at 50% 0%,rgba(121,232,255,.12),transparent 30%),
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(121,232,255,.12),
+      transparent 30%
+    ),
     #071116;
   color:#e9fffb;
 }
@@ -1174,9 +1180,20 @@ h1{
 }
 
 .ai-chat{
-  display:grid;
+  display:flex;
+  flex-direction:column;
   gap:10px;
   margin:14px 0;
+  flex:1 1 auto;
+  min-height:0;
+  overflow-y:auto;
+  overflow-x:hidden;
+  scrollbar-width:none;
+  overscroll-behavior:contain;
+}
+
+.ai-chat::-webkit-scrollbar{
+  display:none;
 }
 
 .ai-message{
@@ -1235,8 +1252,14 @@ h1{
 }
 
 .ai-composer{
-  position:sticky;
-  bottom:0;
+  position:relative;
+  bottom:auto;
+  left:auto;
+  right:auto;
+  width:100%;
+  box-sizing:border-box;
+  flex:0 0 auto;
+  z-index:5;
   padding:10px 0 4px;
   background:linear-gradient(
     transparent,
