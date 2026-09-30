@@ -2302,34 +2302,321 @@ function renderCard(card,index){
 
 function renderFeed(){
 
-  const feed=document.getElementById("feed");
+  const feed = document.getElementById("feed");
 
-  if(!feed)return;
+  if(!feed) return;
 
-  feed.className="feed";
+  feed.className = "feed";
 
-  const cards=shuffle(activeCards());
+  const cards = shuffle(activeCards());
+  const initialCards = cards.slice(0, 12);
 
-  feed.innerHTML=cards
-    .slice(0,12)
+  feed.innerHTML = initialCards
     .map(renderCard)
     .join("");
+
+  // Remember which cards are already on this feed.
+  feedLoadedIds = new Set(
+    initialCards.map(card => card.id)
+  );
 
   bindFeedButtons();
 
   state.seen.push(
-    ...cards
-      .slice(0,6)
-      .map(x=>x.id)
-      .filter(id=>!state.seen.includes(id))
+    ...initialCards
+      .map(card => card.id)
+      .filter(id => !state.seen.includes(id))
   );
 
-  state.seen=state.seen.slice(-100);
+  state.seen = state.seen.slice(-100);
 
   saveState();
 
 }
+  
+/* =========================================================
+   ENDLESS FEED GENERATION
+   ========================================================= */
 
+let feedGenerating = false;
+
+let feedLoadedIds = new Set();
+
+
+async function generateNextFeedCard(){
+
+  const feed = document.getElementById("feed");
+
+  if(
+    !feed ||
+    state.tab !== "feed" ||
+    feedGenerating
+  ){
+    return;
+  }
+
+  feedGenerating = true;
+
+  try{
+
+    const topics = state.prefs.topics
+      .filter(topic => TOPICS[topic]);
+
+    if(!topics.length){
+      throw new Error("No learning topics are selected.");
+    }
+
+    const existingCards = [
+      ...BANK,
+      ...(state.generated || [])
+    ];
+
+    const existingTitles = existingCards
+      .map(card => card.title)
+      .filter(Boolean)
+      .slice(-60);
+
+    const prompt = `
+Generate exactly ONE new educational learning card
+for the Watermelons app.
+
+The card must be genuinely educational, accurate,
+interesting, and suitable for a curious university student.
+
+Choose exactly one topic from this list:
+${topics.join(", ")}
+
+Do not repeat any of these existing card titles:
+${existingTitles.join(" | ")}
+
+Explore a fresh concept, discovery, historical event,
+philosophical question, psychological effect, myth,
+scientific idea, literary insight, or other topic that
+fits the allowed categories.
+
+CARD REQUIREMENTS:
+
+1. title: A short, memorable title.
+2. topic: Exactly one allowed topic key.
+3. dek: A compelling one-sentence introduction.
+4. body: A clear explanation of approximately 90-150 words.
+5. source: A brief source or subject attribution, if appropriate.
+
+Do not invent citations, books, studies, or historical sources.
+If you cannot confidently identify a specific source, use
+a broad attribution or an empty source string.
+
+Do not use markdown.
+Do not include commentary before or after the card.
+
+Return ONLY one valid JSON object in this exact format:
+
+{
+  "title": "Example title",
+  "topic": "${topics[0]}",
+  "dek": "A short, interesting introduction.",
+  "body": "The educational explanation goes here.",
+  "source": "Optional source"
+}
+`;
+
+    const controller = new AbortController();
+
+    const timeout = setTimeout(
+      () => controller.abort(),
+      30000
+    );
+
+    let response;
+
+    try{
+
+      response = await fetch(
+        SCOTTS_TOT_URL +
+        "/generate?wm=" +
+        Date.now(),
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ prompt }),
+          cache: "no-store",
+          signal: controller.signal
+        }
+      );
+
+    }finally{
+
+      clearTimeout(timeout);
+
+    }
+
+    const data = await response.json();
+
+    if(!response.ok || !data.ok || !data.text){
+      console.error("Card generation error:", data);
+      throw new Error("ScottsTot could not generate a card.");
+    }
+
+    // Remove optional markdown code fences.
+    let raw = data.text.trim()
+      .replace(/^```(?:json)?\s*/i, "")
+      .replace(/\s*```$/, "");
+
+    let generated;
+
+    try{
+
+      generated = JSON.parse(raw);
+
+    }catch(error){
+
+      // If the model included extra text, try extracting
+      // the first JSON object.
+      const match = raw.match(/\{[\s\S]*\}/);
+
+      if(!match){
+        throw new Error("The generated card was not valid JSON.");
+      }
+
+      generated = JSON.parse(match[0]);
+
+    }
+
+    // Validate the fields before inserting anything.
+    if(
+      !generated ||
+      typeof generated.title !== "string" ||
+      typeof generated.dek !== "string" ||
+      typeof generated.body !== "string" ||
+      typeof generated.topic !== "string"
+    ){
+      throw new Error("The generated card was missing required fields.");
+    }
+
+    const topic = generated.topic.toLowerCase().trim();
+
+    if(!topics.includes(topic)){
+      throw new Error("The generated card used an invalid topic.");
+    }
+
+    const title = generated.title.trim();
+
+    if(!title || !generated.body.trim()){
+      throw new Error("The generated card was empty.");
+    }
+
+    // Avoid duplicates by title, ignoring capitalization.
+    const normalizedTitle = title.toLowerCase();
+
+    const duplicate = existingCards.some(card =>
+      String(card.title || "").trim().toLowerCase() === normalizedTitle
+    );
+
+    if(duplicate){
+      throw new Error("ScottsTot generated a card that already exists.");
+    }
+
+    // Give the new card a unique ID.
+    const card = {
+      id: "ai-" + Date.now() + "-" +
+        Math.random().toString(36).slice(2, 7),
+      topic,
+      title,
+      dek: generated.dek.trim(),
+      body: generated.body.trim(),
+      source: typeof generated.source === "string"
+        ? generated.source.trim()
+        : ""
+    };
+
+    // Save the card permanently in the app's local state.
+    state.generated = [
+      ...(state.generated || []),
+      card
+    ];
+
+    state.seen.push(card.id);
+    state.seen = state.seen.slice(-100);
+
+    saveState();
+
+    // If the user navigated away while generation was running,
+    // keep the card saved but don't append it to another page.
+    if(
+      state.tab !== "feed" ||
+      document.getElementById("feed") !== feed ||
+      !feed.isConnected
+    ){
+      return;
+    }
+
+    // Add the card directly to the end of the current feed.
+    if(!feedLoadedIds.has(card.id)){
+
+      feed.insertAdjacentHTML(
+        "beforeend",
+        renderCard(card, feed.children.length)
+      );
+
+      feedLoadedIds.add(card.id);
+
+      bindFeedButtons();
+
+    }
+
+  }catch(error){
+
+    console.error("Watermelons feed generation failed:", error);
+
+    toast(
+      "Couldn't load the next card. Scroll a little and try again."
+    );
+
+  }finally{
+
+    feedGenerating = false;
+
+  }
+
+}
+
+/* =========================================================
+   AUTOMATIC FEED SCROLL TRIGGER
+   ========================================================= */
+
+const endlessFeed = document.getElementById("feed");
+
+if(endlessFeed){
+
+  endlessFeed.addEventListener(
+    "scroll",
+    () => {
+
+      // Only generate cards on the Home feed.
+      if(state.tab !== "feed"){
+        return;
+      }
+
+      const distanceToBottom =
+        endlessFeed.scrollHeight -
+        endlessFeed.scrollTop -
+        endlessFeed.clientHeight;
+
+      // Start generating when the user approaches the end.
+      if(distanceToBottom < endlessFeed.clientHeight * 0.75){
+
+        generateNextFeedCard();
+
+      }
+
+    },
+    { passive: true }
+  );
+
+}
+  
 /* =========================================================
    FEED BUTTONS
    ========================================================= */
