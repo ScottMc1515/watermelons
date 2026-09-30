@@ -204,92 +204,98 @@ h1{
     );
 }
 
+/* =========================
+   PHOTOGRAPHIC CARD THEMES
+   ========================= */
+
 .card[data-theme="psychology"]{
   --bg:
-    radial-gradient(
-      circle at 22% 20%,
-      #d6e6e8 0,
-      #92b3b5 25%,
-      #516d68 55%,
-      #243a35 100%
-    );
+    linear-gradient(135deg,#263f3b,#101d20);
+  --photo:
+    url("https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=85");
 }
 
 .card[data-theme="philosophy"]{
   --bg:
-    linear-gradient(
-      135deg,
-      #c6aa7c,
-      #e1cfaa 43%,
-      #718269 70%,
-      #3b4e3c
-    );
+    linear-gradient(135deg,#77634b,#263b32);
+  --photo:
+    url("https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=1200&q=85");
 }
 
 .card[data-theme="mythology"]{
   --bg:
-    linear-gradient(
-      135deg,
-      #d6a26b,
-      #8c6c4a 43%,
-      #536d52 68%,
-      #263d30
-    );
+    linear-gradient(135deg,#73543b,#1c302b);
+  --photo:
+    url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=85");
 }
 
 .card[data-theme="faith"]{
   --bg:
-    linear-gradient(
-      135deg,
-      #f0d28b,
-      #ad9d69 36%,
-      #67825f 66%,
-      #304a37
-    );
+    linear-gradient(135deg,#82704a,#29392d);
+  --photo:
+    url("https://images.unsplash.com/photo-1438032005730-c779502df39b?auto=format&fit=crop&w=1200&q=85");
 }
 
 .card[data-theme="fitness"]{
   --bg:
-    linear-gradient(
-      135deg,
-      #b7a580,
-      #71856b 44%,
-      #3f5845 68%,
-      #1e3229
-    );
+    linear-gradient(135deg,#59694b,#182720);
+  --photo:
+    url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=85");
 }
 
 .card[data-theme="history"]{
   --bg:
-    linear-gradient(
-      135deg,
-      #e0c08d,
-      #a08460 42%,
-      #66654c 68%,
-      #333e32
-    );
+    linear-gradient(135deg,#947650,#342e25);
+  --photo:
+    url("https://images.unsplash.com/photo-1461360370896-922624d12aa1?auto=format&fit=crop&w=1200&q=85");
 }
 
 .card[data-theme="science"]{
   --bg:
-    radial-gradient(
-      circle at 75% 18%,
-      #c7d8ee 0,
-      #8193b3 25%,
-      #4b5d78 55%,
-      #202d40 100%
-    );
+    linear-gradient(135deg,#354a72,#101727);
+  --photo:
+    url("https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=1200&q=85");
 }
 
 .card[data-theme="literature"]{
   --bg:
+    linear-gradient(135deg,#766047,#272d25);
+  --photo:
+    url("https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=1200&q=85");
+}
+
+/* Use the photo when available, with a gradient fallback. */
+
+.card:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-2;
+  background-color:#101b1b;
+  background-image:var(--photo,var(--bg));
+  background-size:cover;
+  background-position:center;
+  filter:saturate(1.08) contrast(1.05);
+  transform:scale(1.02);
+  animation:wmBreathe 14s ease-in-out infinite alternate;
+}
+
+/* Keep the title and description readable over photographs. */
+
+.card:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  background:
     linear-gradient(
-      135deg,
-      #b9a58a,
-      #7d765e 45%,
-      #4d5d4d 70%,
-      #27372e
+      180deg,
+      rgba(4,10,13,.10) 0%,
+      rgba(4,10,13,.16) 24%,
+      rgba(3,9,12,.58) 55%,
+      rgba(3,9,12,.94) 100%
     );
+  pointer-events:none;
 }
 
 .content{
